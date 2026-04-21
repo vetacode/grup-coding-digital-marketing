@@ -1,0 +1,1700 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Coding Dari Nol | Grup Diskusi Premium</title>
+    <meta
+      name="description"
+      content="Belajar Coding dari nol sampai bisa bikin Landing Page cantik berharga tinggi. Gabung grup diskusi premium sekarang — Bayar Seikhlasnya!"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ===== RESET & BASE ===== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      :root {
+        --bg: #090e1a;
+        --bg2: #0d1426;
+        --card: #111827;
+        --border: #1e2d45;
+        --primary: #7c5cfc;
+        --primary-dim: rgba(124, 92, 252, 0.12);
+        --primary-border: rgba(124, 92, 252, 0.25);
+        --accent: #22d3ee;
+        --accent-dim: rgba(34, 211, 238, 0.1);
+        --accent-border: rgba(34, 211, 238, 0.25);
+        --red: #ef4444;
+        --red-dim: rgba(239, 68, 68, 0.1);
+        --red-border: rgba(239, 68, 68, 0.25);
+        --amber: #f59e0b;
+        --amber-dim: rgba(245, 158, 11, 0.08);
+        --text: #f0f4ff;
+        --muted: #6b7fa3;
+        --font-h: 'Space Grotesk', sans-serif;
+        --font-b: 'Plus Jakarta Sans', sans-serif;
+        --radius: 12px;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--font-b);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      /* ===== TYPOGRAPHY ===== */
+      h1,
+      h2,
+      h3 {
+        font-family: var(--font-h);
+        line-height: 1.2;
+      }
+      .grad {
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+      .muted {
+        color: var(--muted);
+      }
+
+      /* ===== LAYOUT ===== */
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .container-sm {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      /* ===== BADGE ===== */
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 14px;
+        border-radius: 999px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        font-family: var(--font-h);
+        margin-bottom: 18px;
+      }
+      .badge-primary {
+        background: var(--primary-dim);
+        border: 1px solid var(--primary-border);
+        color: var(--primary);
+      }
+      .badge-accent {
+        background: var(--accent-dim);
+        border: 1px solid var(--accent-border);
+        color: var(--accent);
+      }
+      .badge-red {
+        background: var(--red-dim);
+        border: 1px solid var(--red-border);
+        color: var(--red);
+      }
+      .badge-amber {
+        background: var(--amber-dim);
+        border: 1px solid rgba(245, 158, 11, 0.3);
+        color: var(--amber);
+      }
+
+      /* ===== SECTION ===== */
+      .section {
+        padding: 80px 0;
+      }
+      .section-title {
+        text-align: center;
+        margin-bottom: 48px;
+      }
+      .section-title h2 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        margin-bottom: 12px;
+      }
+      .section-title p {
+        color: var(--muted);
+        max-width: 560px;
+        margin: 0 auto;
+        font-size: 15px;
+      }
+
+      /* ===== CARD ===== */
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        transition: border-color 0.2s;
+      }
+      .card:hover {
+        border-color: rgba(124, 92, 252, 0.35);
+      }
+
+      /* ===== GRID ===== */
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      @media (max-width: 768px) {
+        .grid-2,
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (min-width: 480px) and (max-width: 768px) {
+        .grid-2 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      /* ===== ICON BOX ===== */
+      .icon-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 10px;
+        background: var(--primary-dim);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .icon-box svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--primary);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .icon-box-sm {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        background: var(--red-dim);
+      }
+      .icon-box-sm svg {
+        width: 16px;
+        height: 16px;
+        stroke: var(--red);
+      }
+
+      /* ===== BUTTONS ===== */
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        color: #fff;
+        font-family: var(--font-h);
+        font-weight: 700;
+        padding: 14px 32px;
+        border-radius: var(--radius);
+        border: none;
+        font-size: 15px;
+        cursor: pointer;
+        transition: opacity 0.2s;
+        text-decoration: none;
+      }
+      .btn-primary:hover {
+        opacity: 0.88;
+      }
+      .btn-outline {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background: var(--card);
+        color: var(--text);
+        font-family: var(--font-h);
+        font-weight: 600;
+        padding: 14px 32px;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        font-size: 15px;
+        cursor: pointer;
+        transition: background 0.2s;
+        text-decoration: none;
+      }
+      .btn-outline:hover {
+        background: #1a2436;
+      }
+
+      /* ===== PILL TAG ===== */
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 7px 16px;
+        font-size: 13px;
+      }
+      .pill svg {
+        width: 16px;
+        height: 16px;
+        stroke: var(--accent);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      /* ===== DIVIDER ===== */
+      .divider {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 0;
+      }
+
+      /* ===== HERO ===== */
+      #hero {
+        position: relative;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
+      .hero-bg {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+      .hero-bg img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.25;
+      }
+      .hero-bg-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          var(--bg) 40%,
+          rgba(9, 14, 26, 0.5) 100%
+        );
+      }
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        padding: 80px 0;
+      }
+      .hero-content h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        margin-bottom: 20px;
+        max-width: 700px;
+      }
+      .hero-content p {
+        color: var(--muted);
+        font-size: clamp(15px, 2vw, 18px);
+        max-width: 540px;
+        margin-bottom: 32px;
+      }
+
+      /* ===== PROBLEM CARDS ===== */
+      .problem-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+      .problem-card h3 {
+        font-family: var(--font-h);
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+      .problem-card p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      /* ===== REALITY LIST ===== */
+      .reality-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        background: rgba(17, 24, 39, 0.6);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 16px 20px;
+        margin-bottom: 14px;
+      }
+      .reality-item svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--amber);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .truth-box {
+        background: linear-gradient(
+          135deg,
+          var(--primary-dim),
+          var(--accent-dim)
+        );
+        border: 1px solid var(--primary-border);
+        border-radius: var(--radius);
+        padding: 24px;
+        text-align: center;
+      }
+      .truth-box .label {
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+      .truth-box .statement {
+        font-family: var(--font-h);
+        font-size: clamp(16px, 2.5vw, 20px);
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .truth-box .statement svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--primary);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      /* ===== METHOD CARDS ===== */
+      .method-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+      }
+      .method-card h3 {
+        font-family: var(--font-h);
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+      .method-card p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+
+      /* ===== BEFORE AFTER ===== */
+      .ba-labels {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-top: 20px;
+      }
+      .ba-label {
+        border-radius: var(--radius);
+        padding: 14px;
+        text-align: center;
+        border: 1px solid;
+      }
+      .ba-label.before {
+        border-color: var(--red-border);
+        background: var(--red-dim);
+      }
+      .ba-label.process {
+        border-color: rgba(245, 158, 11, 0.3);
+        background: var(--amber-dim);
+      }
+      .ba-label.after {
+        border-color: var(--accent-border);
+        background: var(--accent-dim);
+      }
+      .ba-label.after:hover {
+        background: var(--red-dim);
+      }
+
+      .ba-label .lbl-title {
+        font-family: var(--font-h);
+        font-weight: 600;
+        font-size: 13px;
+        margin-bottom: 3px;
+      }
+      .ba-label .lbl-sub {
+        color: var(--muted);
+        font-size: 11px;
+      }
+
+      /* ===== CURRICULUM CARD ===== */
+      .curr-card h3 {
+        font-family: var(--font-h);
+        font-size: 15px;
+        margin: 16px 0 12px;
+      }
+      .curr-card ul {
+        list-style: none;
+      }
+      .curr-card ul li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+      .curr-card ul li::before {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--primary);
+        flex-shrink: 0;
+        margin-top: 5px;
+      }
+
+      /* ===== BENEFIT PILLS ===== */
+      .benefit-pills {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      /* ===== AUDIENCE CARDS ===== */
+      .audience-highlight {
+        background: var(--primary-dim);
+        border: 1px solid var(--primary-border);
+        border-radius: 8px;
+        padding: 10px 14px;
+        margin-top: 16px;
+      }
+      .audience-highlight p {
+        color: var(--primary);
+        font-size: 12px;
+        font-weight: 500;
+      }
+      .audience-card ul {
+        list-style: none;
+      }
+      .audience-card ul li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 8px;
+      }
+      .audience-card ul li::before {
+        content: '';
+        display: block;
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--muted);
+        flex-shrink: 0;
+        margin-top: 6px;
+        opacity: 0.5;
+      }
+
+      /* ===== CTA SECTION ===== */
+      #cta {
+        background: linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+      }
+      .cta-box {
+        background: linear-gradient(135deg, var(--card), rgba(17, 24, 39, 0.7));
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 40px 32px;
+        margin-bottom: 32px;
+      }
+      .price-old {
+        font-family: var(--font-h);
+        font-size: 22px;
+        color: var(--muted);
+        text-decoration: line-through;
+        margin-bottom: 4px;
+      }
+      .price-new {
+        font-family: var(--font-h);
+        font-size: clamp(28px, 5vw, 40px);
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 12px;
+      }
+      .urgency-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: var(--red-dim);
+        border: 1px solid var(--red-border);
+        border-radius: 999px;
+        padding: 5px 14px;
+        font-size: 11px;
+        font-weight: 700;
+        color: var(--red);
+        margin-bottom: 28px;
+        font-family: var(--font-h);
+      }
+      .urgency-badge svg {
+        width: 13px;
+        height: 13px;
+        stroke: var(--red);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .checklist {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 20px;
+        margin-bottom: 28px;
+        text-align: left;
+      }
+      @media (max-width: 480px) {
+        .checklist {
+          grid-template-columns: 1fr;
+        }
+      }
+      .checklist-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: 14px;
+      }
+      .checklist-item svg {
+        width: 16px;
+        height: 16px;
+        stroke: var(--accent);
+        fill: none;
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .cta-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+      }
+      @media (min-width: 480px) {
+        .cta-buttons {
+          flex-direction: row;
+          justify-content: center;
+        }
+      }
+      .note {
+        text-align: center;
+        color: var(--muted);
+        font-size: 12px;
+        margin-top: 16px;
+      }
+
+      /* ===== FAQ ===== */
+      .faq-item {
+        border-bottom: 1px solid var(--border);
+        padding: 20px 0;
+      }
+      .faq-q {
+        font-family: var(--font-h);
+        font-weight: 600;
+        font-size: 15px;
+        margin-bottom: 8px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .faq-q svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--muted);
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        transition: transform 0.3s;
+        flex-shrink: 0;
+      }
+      .faq-item.open .faq-q svg {
+        transform: rotate(180deg);
+      }
+      .faq-a {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+        display: none;
+      }
+      .faq-item.open .faq-a {
+        display: block;
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        background: var(--bg2);
+        border-top: 1px solid var(--border);
+        padding: 32px 0;
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      footer strong {
+        color: var(--text);
+      }
+
+      /* ===== ANIMATIONS ===== */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(28px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .fade-up {
+        opacity: 0;
+        animation: fadeUp 0.6s ease forwards;
+      }
+      .delay-1 {
+        animation-delay: 0.1s;
+      }
+      .delay-2 {
+        animation-delay: 0.2s;
+      }
+      .delay-3 {
+        animation-delay: 0.3s;
+      }
+      .delay-4 {
+        animation-delay: 0.45s;
+      }
+      .delay-5 {
+        animation-delay: 0.6s;
+      }
+
+      /* Intersection observer targets */
+      .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .reveal.delay-1 {
+        transition-delay: 0.1s;
+      }
+      .reveal.delay-2 {
+        transition-delay: 0.2s;
+      }
+      .reveal.delay-3 {
+        transition-delay: 0.3s;
+      }
+
+      /* ===== STICKY NAV ===== */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 99;
+        background: rgba(9, 14, 26, 0.85);
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        padding: 14px 0;
+      }
+      .nav-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-logo {
+        font-family: var(--font-h);
+        font-weight: 700;
+        font-size: 16px;
+      }
+      .nav-logo span {
+        color: var(--primary);
+      }
+      .nav-cta {
+        font-size: 13px;
+      }
+
+      /* ===== IMAGE SECTION ===== */
+      .img-banner {
+        width: 100%;
+        border-radius: 16px;
+        object-fit: cover;
+        opacity: 0.55;
+      }
+
+      /* ===== SECTION SEPARATORS ===== */
+      .section-alt {
+        background: linear-gradient(
+          180deg,
+          var(--bg) 0%,
+          rgba(13, 20, 38, 0.7) 50%,
+          var(--bg) 100%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== NAV ===== -->
+    <nav>
+      <div class="container nav-inner">
+        <div class="nav-logo">
+          <span>&lt;</span>CariSolusi<span>/&gt;</span>
+        </div>
+        <a
+          href="https://lynk.id/vetabiz/n8dxy1p9prwz"
+          target="_blank"
+          class="btn-primary nav-cta"
+          style="padding: 8px 20px; font-size: 13px"
+        >
+          🚀 Join Sekarang
+        </a>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero">
+      <div class="hero-bg">
+        <img
+          src="https://media.base44.com/images/public/69e6e7c4932b6d3892712726/b19038aec_generated_3f86bdb2.png"
+          alt="Coding workspace"
+        />
+        <div class="hero-bg-overlay"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="badge badge-primary fade-up delay-1">
+          <svg
+            viewBox="0 0 24 24"
+            style="
+              width: 14px;
+              height: 14px;
+              stroke: currentColor;
+              fill: none;
+              stroke-width: 2;
+              stroke-linecap: round;
+              stroke-linejoin: round;
+            "
+          >
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+          Promo Launching — Batch Awal
+        </div>
+        <h1 class="fade-up delay-2">
+          Belajar Coding Dari <span class="grad">Nol</span> Sampai Bisa Bikin
+          <span class="grad">Landing Page Cantik</span> Berharga Tinggi
+        </h1>
+        <p class="fade-up delay-3">
+          Gak punya skill coding? Justru ini titik awal terbaikmu. Gabung grup
+          diskusi premium & belajar dari real project, bukan cuma teori.
+        </p>
+        <div class="fade-up delay-4">
+          <div class="pill" style="display: inline-flex">
+            <svg viewBox="0 0 24 24">
+              <polyline points="16 18 22 12 16 6" />
+              <polyline points="8 6 2 12 8 18" />
+            </svg>
+            HTML &bull; CSS &bull; JS &bull; Landing Page
+          </div>
+        </div>
+        <div style="margin-top: 32px" class="fade-up delay-5">
+          <a
+            href="https://lynk.id/vetabiz/n8dxy1p9prwz"
+            target="_blank"
+            class="btn-primary"
+            style="
+              margin-right: 12px;
+              margin-bottom: 12px;
+              display: inline-flex;
+            "
+          >
+            🚀 Ambil Promo Sekarang
+            <svg
+              viewBox="0 0 24 24"
+              style="
+                width: 16px;
+                height: 16px;
+                stroke: currentColor;
+                fill: none;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+              "
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </a>
+          <a
+            href="https://carisolusi.biz.id/"
+            target="_blank"
+            class="btn-outline"
+            style="display: inline-flex"
+          >
+            🌐 Web Carisolusi
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROBLEM ===== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="badge badge-red">MASALAH UTAMA</div>
+          <h2>
+            Kenapa Banyak Orang
+            <span style="color: var(--red)">Gagal</span> Belajar Coding?
+          </h2>
+        </div>
+        <div class="grid-2">
+          <div class="card problem-card reveal delay-1">
+            <div
+              class="icon-box icon-box-sm"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                margin-top: 2px;
+              "
+            >
+              <svg viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div>
+              <h3>Belajar Tanpa Praktik Nyata</h3>
+              <p>
+                Nonton tutorial, baca materi, copy-paste tanpa paham. Tidak
+                pernah menghadapi problem real & tidak tahu cara debugging.
+              </p>
+            </div>
+          </div>
+          <div class="card problem-card reveal delay-2">
+            <div
+              class="icon-box icon-box-sm"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                margin-top: 2px;
+              "
+            >
+              <svg viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div>
+              <h3>Terlalu Bergantung ke AI</h3>
+              <p>
+                Pakai ChatGPT generate code tapi tidak ngerti cara kerjanya.
+                Saat error → stuck, saat deploy → gagal.
+              </p>
+            </div>
+          </div>
+          <div class="card problem-card reveal delay-1">
+            <div
+              class="icon-box icon-box-sm"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                margin-top: 2px;
+              "
+            >
+              <svg viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div>
+              <h3>Tidak Pernah Masuk Real Project</h3>
+              <p>
+                Belajar HTML, CSS, JS tapi belum pernah bikin landing page utuh.
+                Tidak punya portfolio & tidak percaya diri.
+              </p>
+            </div>
+          </div>
+          <div class="card problem-card reveal delay-2">
+            <div
+              class="icon-box icon-box-sm"
+              style="
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+                margin-top: 2px;
+              "
+            >
+              <svg viewBox="0 0 24 24">
+                <line x1="18" y1="6" x2="6" y2="18" />
+                <line x1="6" y1="6" x2="18" y2="18" />
+              </svg>
+            </div>
+            <div>
+              <h3>Tidak Ada Tempat Bertanya</h3>
+              <p>
+                Saat ketemu error aneh atau bug tidak jelas, bisa stuck
+                berhari-hari hanya karena hal kecil tanpa mentor atau komunitas.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="reveal"
+          style="
+            margin-top: 32px;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 220px;
+          "
+        >
+          <img
+            src="https://media.base44.com/images/public/69e6e7c4932b6d3892712726/9e03555fc_generated_fee8d856.png"
+            alt="Frustration"
+            class="img-banner"
+            style="height: 100%; object-position: center 30%"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== REALITY ===== -->
+    <section class="section">
+      <div class="container-sm">
+        <div class="section-title reveal">
+          <div class="badge badge-amber">REALITA</div>
+          <h2>Pernah Ngalamin Ini?</h2>
+        </div>
+        <div class="reality-item reveal delay-1">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+            />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <p>
+            Sudah pakai prompt AI… sudah detail… tapi hasilnya tampilan landing
+            page masih biasa aja
+          </p>
+        </div>
+        <div class="reality-item reveal delay-2">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+            />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <p>
+            Layout berantakan & tidak enak dilihat — apalagi dijual ke client
+          </p>
+        </div>
+        <div class="reality-item reveal delay-3">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+            />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <p>Tahu konsep, tapi tidak bisa eksekusi</p>
+        </div>
+        <div class="reality-item reveal delay-3">
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+            />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
+          <p>Punya ilmu, tapi tidak bisa dipakai</p>
+        </div>
+        <div class="truth-box reveal">
+          <p class="label">Masalah utamanya bukan di kamu…</p>
+          <p class="statement">
+            Tapi di cara belajar yang salah
+            <svg viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOLUTION ===== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="badge badge-accent">SOLUSI</div>
+          <h2>
+            Belajar Lewat <span class="grad">Real Project</span> & Problem
+            Solving
+          </h2>
+          <p>
+            Grup komunitas belajar Coding + Digital Marketing dari nol. Fokus ke
+            website & landing page, dibimbing langsung oleh praktisi.
+          </p>
+        </div>
+        <div class="grid-2">
+          <div class="card method-card reveal delay-1">
+            <div class="icon-box" style="flex-shrink: 0; margin-top: 2px">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3>Belajar dari Masalah Nyata</h3>
+              <p>
+                Bukan dari slide, tapi dari error saat ngoding & kendala saat
+                bikin website. Di situlah skill terbentuk.
+              </p>
+            </div>
+          </div>
+          <div class="card method-card reveal delay-2">
+            <div class="icon-box" style="flex-shrink: 0; margin-top: 2px">
+              <svg viewBox="0 0 24 24">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <div>
+              <h3>Ngoding Sambil Jalan</h3>
+              <p>
+                Bikin landing page, website sederhana, struktur project dari
+                nol. Benar-benar bikin sendiri, bukan cuma lihat.
+              </p>
+            </div>
+          </div>
+          <div class="card method-card reveal delay-1">
+            <div class="icon-box" style="flex-shrink: 0; margin-top: 2px">
+              <svg viewBox="0 0 24 24">
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                />
+              </svg>
+            </div>
+            <div>
+              <h3>Diskusi Aktif</h3>
+              <p>
+                Tanya jawab, bahas kendala langsung, sharing solusi. Tidak ada
+                yang belajar sendirian di grup ini.
+              </p>
+            </div>
+          </div>
+          <div class="card method-card reveal delay-2">
+            <div class="icon-box" style="flex-shrink: 0; margin-top: 2px">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="12" y1="8" x2="12" y2="12" />
+                <line x1="12" y1="16" x2="12.01" y2="16" />
+              </svg>
+            </div>
+            <div>
+              <h3>Fokus Sampai Bisa</h3>
+              <p>
+                Bukan sekadar paham… tapi bisa bikin sesuatu yang bernilai dan
+                bisa dijual ke client.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="reveal"
+          style="
+            margin-top: 28px;
+            border-radius: 16px;
+            overflow: hidden;
+            height: 200px;
+          "
+        >
+          <img
+            src="https://media.base44.com/images/public/69e6e7c4932b6d3892712726/1280ea073_generated_db085951.png"
+            alt="Community"
+            class="img-banner"
+            style="height: 100%; object-position: center"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BEFORE AFTER ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="badge badge-primary">TRANSFORMASI</div>
+          <h2>Dari "Biasa" Jadi <span class="grad">"Layak Jual"</span></h2>
+          <p>
+            Kamu akan belajar cara merapikan layout, menyusun section, dan
+            upgrade tampilan biar terlihat profesional.
+          </p>
+        </div>
+        <div
+          class="reveal"
+          style="
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+          "
+        >
+          <img
+            src="https://media.base44.com/images/public/69e6e7c4932b6d3892712726/e65b033a9_generated_7aaf2fbc.png"
+            alt="Before and After comparison"
+            style="width: 100%; height: auto"
+          />
+        </div>
+        <div class="ba-labels reveal">
+          <div class="ba-label before">
+            <div class="lbl-title">AI Mentah</div>
+            <div class="lbl-sub">Sebelum</div>
+          </div>
+          <div class="ba-label process">
+            <div class="lbl-title">Optimasi Basic</div>
+            <div class="lbl-sub">Proses</div>
+          </div>
+          <div class="ba-label after">
+            <div class="lbl-title">Optimasi Lanjutan</div>
+            <div class="lbl-sub">Hasil</div>
+          </div>
+        </div>
+        <a href="https://diamantdigital.vercel.app/" target="_blank">
+          <div class="reveal w-full">
+            <div class="ba-label after hover:bg-red-500">
+              <div class="lbl-title">LIHAT PORTFOLIO</div>
+              <div class="lbl-sub">Landing Page Project Nyata</div>
+            </div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ===== CURRICULUM ===== -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="badge badge-accent">KURIKULUM</div>
+          <h2>Apa yang Akan Kamu Pelajari?</h2>
+        </div>
+        <div class="grid-3">
+          <div class="card curr-card reveal delay-1">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <h3>Basic Coding (Praktis)</h3>
+            <ul>
+              <li>Struktur HTML, CSS, JS</li>
+              <li>Cara kerja website</li>
+              <li>Alur pembuatan project</li>
+            </ul>
+          </div>
+          <div class="card curr-card reveal delay-2">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+            </div>
+            <h3>Website & Landing Page</h3>
+            <ul>
+              <li>Struktur landing page yang benar</li>
+              <li>Layout yang bisa dijual</li>
+              <li>Implementasi langsung</li>
+            </ul>
+          </div>
+          <div class="card curr-card reveal delay-3">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24">
+                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+                <polyline points="16 7 22 7 22 13" />
+              </svg>
+            </div>
+            <h3>Basic Digital Marketing</h3>
+            <ul>
+              <li>Cara website dapat traffic</li>
+              <li>Dasar funnel sederhana</li>
+              <li>Insight kebutuhan market</li>
+            </ul>
+          </div>
+        </div>
+        <div class="benefit-pills reveal">
+          <div class="pill">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
+            Grup diskusi aktif
+          </div>
+          <div class="pill">
+            <svg viewBox="0 0 24 24">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+            </svg>
+            Bimbingan langsung dari programmer
+          </div>
+          <div class="pill">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+            Praktik langsung bikin project
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== AUDIENCE ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title reveal">
+          <div class="badge badge-primary">TARGET PESERTA</div>
+          <h2>Cocok Untuk Siapa?</h2>
+        </div>
+        <div class="grid-3">
+          <div
+            class="card audience-card reveal delay-1"
+            style="display: flex; flex-direction: column"
+          >
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+            <h3
+              style="
+                font-family: var(--font-h);
+                font-size: 15px;
+                margin: 16px 0 12px;
+              "
+            >
+              Pemula Total (Dari Nol)
+            </h3>
+            <ul style="flex: 1">
+              <li>Belum pernah coding</li>
+              <li>Belum pernah bikin website</li>
+              <li>Bingung mulai dari mana</li>
+            </ul>
+            <div class="audience-highlight">
+              <p>Di sini kamu mulai dari basic banget</p>
+            </div>
+          </div>
+          <div
+            class="card audience-card reveal delay-2"
+            style="display: flex; flex-direction: column"
+          >
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24">
+                <polyline points="1 4 1 10 7 10" />
+                <path d="M3.51 15a9 9 0 1 0 .49-5.34" />
+              </svg>
+            </div>
+            <h3
+              style="
+                font-family: var(--font-h);
+                font-size: 15px;
+                margin: 16px 0 12px;
+              "
+            >
+              Sudah Belajar Tapi Masih Bingung
+            </h3>
+            <ul style="flex: 1">
+              <li>Sudah nonton tutorial</li>
+              <li>Sudah ikut kelas</li>
+              <li>Tapi belum bisa praktik</li>
+            </ul>
+            <div class="audience-highlight">
+              <p>Di sini kamu akan "connect the dots"</p>
+            </div>
+          </div>
+          <div
+            class="card audience-card reveal delay-3"
+            style="display: flex; flex-direction: column"
+          >
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <h3
+              style="
+                font-family: var(--font-h);
+                font-size: 15px;
+                margin: 16px 0 12px;
+              "
+            >
+              Mau Bikin Project Nyata
+            </h3>
+            <ul style="flex: 1">
+              <li>Landing page</li>
+              <li>Website sederhana</li>
+              <li>Struktur project</li>
+            </ul>
+            <div class="audience-highlight">
+              <p>Bukan teori, tapi hasil nyata</p>
+            </div>
+          </div>
+        </div>
+        <p
+          class="reveal"
+          style="
+            text-align: center;
+            font-family: var(--font-h);
+            font-weight: 600;
+            font-size: 18px;
+            margin-top: 40px;
+          "
+        >
+          Mau cuma lihat? Atau mau bisa bikin sendiri?
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="section" id="cta">
+      <div class="container-sm">
+        <div class="section-title reveal">
+          <div class="badge badge-primary">
+            <svg
+              viewBox="0 0 24 24"
+              style="
+                width: 13px;
+                height: 13px;
+                stroke: currentColor;
+                fill: none;
+                stroke-width: 2;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+              "
+            >
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+            </svg>
+            PROMO LAUNCHING — BATCH AWAL
+          </div>
+          <h2>Ambil Kesempatanmu <span class="grad">Sekarang</span></h2>
+        </div>
+        <div class="cta-box reveal">
+          <div style="text-align: center; margin-bottom: 28px">
+            <p style="color: var(--muted); font-size: 13px; margin-bottom: 6px">
+              Program ini biasanya bernilai:
+            </p>
+            <p class="price-old">Rp 2.500.000</p>
+            <p class="price-new">💥 Bayar Seikhlasnya</p>
+            <div class="urgency-badge">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" />
+                <polyline points="12 6 12 12 16 14" />
+              </svg>
+              Hanya untuk 5 Orang Pertama
+            </div>
+          </div>
+          <div class="checklist">
+            <div class="checklist-item">
+              <svg viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Bisa & paham alur coding (bukan copy AI)
+            </div>
+            <div class="checklist-item">
+              <svg viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Bisa bikin website sendiri dari 0
+            </div>
+            <div class="checklist-item">
+              <svg viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Belajar dengan cara yang benar
+            </div>
+            <div class="checklist-item">
+              <svg viewBox="0 0 24 24">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Siap jual sebagai jasa
+            </div>
+          </div>
+          <div class="cta-buttons">
+            <a
+              href="https://lynk.id/vetabiz/n8dxy1p9prwz"
+              target="_blank"
+              class="btn-primary"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                style="
+                  width: 16px;
+                  height: 16px;
+                  stroke: currentColor;
+                  fill: none;
+                  stroke-width: 2;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                "
+              >
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+              Join Sekarang
+              <svg
+                viewBox="0 0 24 24"
+                style="
+                  width: 16px;
+                  height: 16px;
+                  stroke: currentColor;
+                  fill: none;
+                  stroke-width: 2;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                "
+              >
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
+            </a>
+            <a
+              href="https://carisolusi.biz.id/"
+              target="_blank"
+              class="btn-outline"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                style="
+                  width: 16px;
+                  height: 16px;
+                  stroke: currentColor;
+                  fill: none;
+                  stroke-width: 2;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                "
+              >
+                <circle cx="12" cy="12" r="10" />
+                <line x1="2" y1="12" x2="22" y2="12" />
+                <path
+                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+                />
+              </svg>
+              Kembali ke Web Carisolusi
+            </a>
+          </div>
+        </div>
+        <p class="note reveal">
+          ⏳ Slot sangat terbatas — Mulai dari nol, tapi dengan cara yang benar
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="section section-alt">
+      <div class="container-sm">
+        <div class="section-title reveal">
+          <h2>FAQ</h2>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            Apakah cocok untuk pemula?<svg viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="faq-a">
+            Ya, sangat cocok. Semua dimulai dari nol. Tidak ada syarat skill
+            sebelumnya.
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            Apakah harus bisa coding dulu?<svg viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="faq-a">
+            Tidak. Justru ini tempat belajar dari awal. Tidak perlu background
+            coding apapun.
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            Apakah ini kelas atau komunitas?<svg viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="faq-a">
+            Ini komunitas belajar aktif berbasis praktik & diskusi. Bukan kelas
+            pasif yang cuma kasih materi.
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            Apakah ada materi?<svg viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="faq-a">
+            Ada, tapi bukan fokus utama. Fokusnya praktik & problem solving
+            langsung dari real case.
+          </div>
+        </div>
+        <div class="faq-item reveal">
+          <div class="faq-q">
+            Apakah bisa langsung jago?<svg viewBox="0 0 24 24">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </div>
+          <div class="faq-a">
+            Tidak instan, tapi jauh lebih cepat dibanding belajar sendiri tanpa
+            arah dan tanpa mentor.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FINAL CTA ===== -->
+    <section class="section" style="padding: 60px 0">
+      <div class="container-sm" style="text-align: center">
+        <h2
+          class="reveal"
+          style="font-size: clamp(1.4rem, 3.5vw, 2rem); margin-bottom: 8px"
+        >
+          🚀 Selamat Bergabung & Happy Ngoding
+        </h2>
+        <p class="muted reveal" style="margin-bottom: 32px">
+          Kalau ada kendala saat belajar — langsung tanyakan di grup. Bukan dari
+          teori… tapi dari praktik nyata.
+        </p>
+        <div class="cta-buttons reveal">
+          <a
+            href="https://lynk.id/vetabiz/n8dxy1p9prwz"
+            target="_blank"
+            class="btn-primary"
+          >
+            🚀 Join Sekarang
+          </a>
+          <a
+            href="https://carisolusi.biz.id/"
+            target="_blank"
+            class="btn-outline"
+          >
+            🌐 Kembali ke Web Carisolusi
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="container">
+        <p style="margin-bottom: 6px">
+          <strong>CariSolusi.biz.id</strong> — Belajar Coding & Digital
+          Marketing
+        </p>
+        <p>Belajar dari nol, tapi dengan cara yang benar. 🚀</p>
+      </div>
+    </footer>
+
+    <script>
+      // ===== INTERSECTION OBSERVER for scroll animations =====
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+          });
+        },
+        { threshold: 0.12 },
+      );
+
+      document
+        .querySelectorAll('.reveal')
+        .forEach((el) => observer.observe(el));
+
+      // ===== FAQ ACCORDION =====
+      document.querySelectorAll('.faq-q').forEach((q) => {
+        q.addEventListener('click', () => {
+          const item = q.parentElement;
+          const isOpen = item.classList.contains('open');
+          document
+            .querySelectorAll('.faq-item')
+            .forEach((i) => i.classList.remove('open'));
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+    </script>
+  </body>
+</html>

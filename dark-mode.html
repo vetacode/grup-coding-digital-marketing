@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="id" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Premium Presentation - Belajar Coding Dari Nol</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        overflow: hidden;
+        background-color: #020617;
+      }
+
+      .slide {
+        display: none;
+        height: 100vh;
+        width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .slide.active {
+        display: flex;
+        animation: fadeIn 0.8s ease-in-out;
+      }
+
+      .progress-segment {
+        height: 4px;
+        background: rgba(255, 255, 255, 0.1);
+        flex-grow: 1;
+        margin: 0 2px;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+
+      .progress-fill {
+        height: 100%;
+        background: #bef264; /* Lime Color */
+        width: 0%;
+        transition: width 0.3s ease;
+      }
+
+      .glass-card {
+        background: rgba(15, 23, 42, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(1.05);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body class="text-slate-200">
+    <div
+      id="progress-container"
+      class="fixed top-0 left-0 w-full z-50 flex p-4"
+    ></div>
+
+    <main id="slider">
+      <section class="slide active relative">
+        <img
+          src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop"
+          class="absolute inset-0 w-full h-full object-cover brightness-[0.3]"
+          alt="Coding Hero"
+        />
+        <div
+          class="relative z-10 container mx-auto px-10 flex flex-col justify-center h-full"
+        >
+          <span
+            class="inline-block bg-lime-400 text-slate-900 font-bold px-4 py-1 rounded-full mb-6 animate__animated animate__fadeInDown"
+            >BATCH AWAL: GABUNG SEIKHLASNYA</span
+          >
+          <h1
+            class="text-6xl md:text-8xl font-extrabold leading-tight mb-6 animate__animated animate__fadeInLeft"
+          >
+            Bikin Landing Page <br />
+            <span class="text-lime-400 italic underline"
+              >Cantik & Berharga Tinggi</span
+            >
+          </h1>
+          <p
+            class="text-xl text-slate-400 max-w-2xl animate__animated animate__fadeInUp animate__delay-1s"
+          >
+            Belajar Coding & Digital Marketing dari nol sampai bisa eksekusi
+            project nyata. Bukan sekadar teori, tapi bimbingan praktisi.
+          </p>
+        </div>
+      </section>
+
+      <section class="slide relative bg-slate-950">
+        <div class="grid grid-cols-1 md:grid-cols-2 w-full">
+          <div class="p-10 md:p-20 flex flex-col justify-center">
+            <h2 class="text-4xl font-bold text-lime-400 mb-8">
+              <i class="fa-solid fa-triangle-exclamation mr-3"></i>Kenapa Banyak
+              Orang Gagal?
+            </h2>
+            <ul class="space-y-6">
+              <li class="flex items-start space-x-4">
+                <div class="bg-red-500/20 p-3 rounded-lg">
+                  <i class="fa-solid fa-book-open text-red-400"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl">Hanya Teori Tanpa Praktik</h3>
+                  <p class="text-slate-400 text-sm">
+                    Hafal syntax tapi bingung saat ketemu error di dunia nyata.
+                  </p>
+                </div>
+              </li>
+              <li class="flex items-start space-x-4">
+                <div class="bg-red-500/20 p-3 rounded-lg">
+                  <i class="fa-solid fa-robot text-red-400"></i>
+                </div>
+                <div>
+                  <h3 class="font-bold text-xl">Ketergantungan AI Mentah</h3>
+                  <p class="text-slate-400 text-sm">
+                    Pakai ChatGPT tapi tidak paham alur teknis. Saat error,
+                    langsung stuck.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="h-screen">
+            <img
+              src="https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop"
+              class="w-full h-full object-cover"
+              alt="Error Screen"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="slide relative bg-slate-900">
+        <img
+          src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+          class="absolute inset-0 w-full h-full object-cover opacity-20"
+          alt="Team Work"
+        />
+        <div class="relative z-10 container mx-auto px-10 py-20">
+          <h2
+            class="text-center text-4xl font-bold mb-16 animate__animated animate__fadeIn"
+          >
+            Metode Belajar <span class="text-lime-400">Paling Efektif</span>
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              class="glass-card p-8 rounded-3xl text-center hover:border-lime-400 transition"
+            >
+              <i
+                class="fa-solid fa-laptop-code text-5xl text-lime-400 mb-6"
+              ></i>
+              <h3 class="text-2xl font-bold mb-4">Real Project</h3>
+              <p class="text-slate-400">
+                Bukan cuma latihan, kamu akan membangun landing page utuh yang
+                layak jual.
+              </p>
+            </div>
+            <div
+              class="glass-card p-8 rounded-3xl text-center hover:border-lime-400 transition"
+            >
+              <i
+                class="fa-solid fa-users-viewfinder text-5xl text-lime-400 mb-6"
+              ></i>
+              <h3 class="text-2xl font-bold mb-4">Grup Premium</h3>
+              <p class="text-slate-400">
+                Diskusi aktif 2 arah. Ada error? Tanya langsung ke mentor
+                praktisi.
+              </p>
+            </div>
+            <div
+              class="glass-card p-8 rounded-3xl text-center hover:border-lime-400 transition"
+            >
+              <i class="fa-solid fa-chart-line text-5xl text-lime-400 mb-6"></i>
+              <h3 class="text-2xl font-bold mb-4">Digital Marketing</h3>
+              <p class="text-slate-400">
+                Website tanpa traffic itu sia-sia. Kita ajarkan cara dapatkan
+                leads.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="slide relative bg-slate-950 flex items-center">
+        <div
+          class="container mx-auto px-10 grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+        >
+          <div class="order-2 md:order-1">
+            <div class="relative">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop"
+                class="rounded-2xl shadow-2xl border-4 border-slate-800"
+                alt="Portfolio Result"
+              />
+              <div
+                class="absolute -bottom-6 -right-6 bg-lime-400 text-slate-900 p-6 rounded-2xl font-bold shadow-xl"
+              >
+                "Layak Jual <br />
+                Harga Tinggi"
+              </div>
+            </div>
+          </div>
+          <div class="order-1 md:order-2 space-y-6">
+            <h2 class="text-5xl font-bold mb-6">
+              Bukan Sekadar "Bisa"<br /><span class="text-lime-400"
+                >Tapi Sampai Profesional</span
+              >
+            </h2>
+            <p
+              class="text-lg text-slate-400 italic border-l-4 border-lime-400 pl-6"
+            >
+              "Di grup ini, kamu akan dibimbing merapikan layout, menyusun
+              section yang konversinya tinggi, dan sense design yang benar."
+            </p>
+            <div class="flex items-center space-x-6 py-4">
+              <div class="text-center">
+                <span class="block text-3xl font-bold text-white">0</span>
+                <span class="text-xs text-slate-500 uppercase">Skill Awal</span>
+              </div>
+              <i class="fa-solid fa-arrow-right text-lime-400"></i>
+              <div class="text-center">
+                <span class="block text-3xl font-bold text-lime-400 underline"
+                  >Landing Page</span
+                >
+                <span class="text-xs text-slate-500 uppercase"
+                  >Hasil Akhir</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="slide relative flex items-center justify-center text-center"
+      >
+        <img
+          src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
+          class="absolute inset-0 w-full h-full object-cover opacity-10"
+          alt="Office Action"
+        />
+        <div class="relative z-10 container mx-auto px-6">
+          <h2 class="text-4xl md:text-6xl font-extrabold mb-4">
+            Amankan Slot Sekarang!
+          </h2>
+          <p class="text-xl text-slate-400 mb-12">
+            Hanya untuk 5 Orang Pertama (Promo Bayar Seikhlasnya)
+          </p>
+
+          <div
+            class="flex flex-col md:flex-row gap-6 justify-center items-center"
+          >
+            <a
+              href="https://lynk.id/vetabiz/n8dxy1p9prwz"
+              target="_blank"
+              class="bg-lime-400 hover:bg-lime-300 text-slate-950 px-10 py-5 rounded-full text-xl font-bold transition transform hover:scale-105 flex items-center shadow-lg shadow-lime-400/20"
+            >
+              <i class="fa-solid fa-rocket mr-3"></i> Gabung Sekarang
+            </a>
+            <a
+              href="https://carisolusi.biz.id/"
+              target="_blank"
+              class="bg-slate-800 hover:bg-slate-700 text-white px-10 py-5 rounded-full text-xl font-bold transition flex items-center border border-slate-700"
+            >
+              <i class="fa-solid fa-globe mr-3"></i> Kembali ke Web
+            </a>
+          </div>
+
+          <div class="mt-16 text-slate-500 flex justify-center space-x-12">
+            <div class="flex items-center">
+              <i class="fa-solid fa-shield-halved mr-2"></i> Bimbingan Intensif
+            </div>
+            <div class="flex items-center">
+              <i class="fa-solid fa-laptop mr-2"></i> Materi Praktis
+            </div>
+            <div class="flex items-center">
+              <i class="fa-solid fa-heart mr-2"></i> Community Driven
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="fixed bottom-10 right-10 z-50 flex space-x-4">
+      <button
+        onclick="changeSlide(-1)"
+        class="bg-slate-800/80 hover:bg-slate-700 p-4 rounded-full text-white backdrop-blur transition-all active:scale-95 border border-slate-700"
+      >
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+      <button
+        onclick="changeSlide(1)"
+        class="bg-lime-400 hover:bg-lime-300 p-4 rounded-full text-slate-900 font-bold backdrop-blur transition-all active:scale-95 shadow-lg shadow-lime-400/20"
+      >
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div
+      class="fixed bottom-4 left-4 text-[10px] text-slate-600 uppercase tracking-widest pointer-events-none"
+    >
+      Use Arrow Keys or Space to Navigate
+    </div>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+      const progressContainer = document.getElementById('progress-container');
+
+      // Initialize Progress Bar
+      function initProgress() {
+        for (let i = 0; i < totalSlides; i++) {
+          const segment = document.createElement('div');
+          segment.className = 'progress-segment';
+          const fill = document.createElement('div');
+          fill.className = 'progress-fill';
+          fill.id = `fill-${i}`;
+          segment.appendChild(fill);
+          progressContainer.appendChild(segment);
+        }
+        updateProgress();
+      }
+
+      function updateProgress() {
+        for (let i = 0; i < totalSlides; i++) {
+          const fill = document.getElementById(`fill-${i}`);
+          if (i < currentSlide) {
+            fill.style.width = '100%';
+          } else if (i === currentSlide) {
+            fill.style.width = '100%'; // Or use a timer animation
+          } else {
+            fill.style.width = '0%';
+          }
+        }
+      }
+
+      function changeSlide(direction) {
+        slides[currentSlide].classList.remove('active');
+        slides[currentSlide].classList.add('animate__fadeOut');
+
+        currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+
+        setTimeout(() => {
+          slides.forEach((s) => {
+            s.classList.remove('active', 'animate__fadeOut');
+          });
+          slides[currentSlide].classList.add('active');
+          updateProgress();
+        }, 100);
+      }
+
+      // Keyboard Navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === ' ') {
+          changeSlide(1);
+        } else if (e.key === 'ArrowLeft') {
+          changeSlide(-1);
+        }
+      });
+
+      window.onload = initProgress;
+    </script>
+  </body>
+</html>

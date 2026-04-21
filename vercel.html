@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Belajar Coding dari Nol - Grup Diskusi Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+
+      .hero-gradient {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      }
+
+      .slider-container {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slider-wrapper {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slider-item {
+        min-width: 100%;
+        padding: 2rem;
+      }
+
+      .slide-fade-enter {
+        animation: fadeIn 0.5s ease-in;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .glow-text {
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #3b82f6, #2563eb);
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+      }
+
+      .btn-secondary {
+        border: 2px solid #3b82f6;
+        color: #3b82f6;
+        transition: all 0.3s ease;
+      }
+
+      .btn-secondary:hover {
+        background: #3b82f6;
+        color: white;
+      }
+
+      .card-problem {
+        background: rgba(30, 41, 59, 0.8);
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .card-problem:hover {
+        border-color: rgba(59, 130, 246, 0.5);
+        transform: translateY(-5px);
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.4);
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .dot.active {
+        background: #3b82f6;
+        width: 32px;
+        border-radius: 6px;
+      }
+
+      .counter-box {
+        background: rgba(59, 130, 246, 0.1);
+        border-left: 4px solid #3b82f6;
+      }
+
+      .testimonial-card {
+        background: rgba(30, 41, 59, 0.6);
+        backdrop-filter: blur(10px);
+      }
+
+      .promo-badge {
+        background: linear-gradient(135deg, #dc2626, #ef4444);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.8;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-slate-950 text-white overflow-x-hidden">
+    <!-- SECTION 1: ATTENTION - Hero dengan Slider -->
+    <section
+      class="hero-gradient min-h-screen flex items-center justify-center relative overflow-hidden"
+    >
+      <div class="absolute inset-0 opacity-20">
+        <div
+          class="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl"
+        ></div>
+        <div
+          class="absolute bottom-20 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 relative z-10 max-w-5xl">
+        <!-- Slider untuk Hook -->
+        <div
+          class="slider-container bg-slate-900 rounded-2xl overflow-hidden border border-blue-500 border-opacity-30"
+        >
+          <div class="slider-wrapper" id="heroSlider">
+            <!-- Slide 1: Problem -->
+            <div class="slider-item slide-fade-enter">
+              <div class="text-center py-12 md:py-16">
+                <div class="mb-6">
+                  <span
+                    class="inline-block px-4 py-2 rounded-full bg-red-500 bg-opacity-20 text-red-300 text-sm font-semibold mb-6"
+                  >
+                    🔴 MASALAH
+                  </span>
+                </div>
+                <h1
+                  class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                >
+                  Sudah Ikut Kelas… <br />
+                  <span class="glow-text">Tapi Masih Bingung?</span>
+                </h1>
+                <p
+                  class="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto"
+                >
+                  Nonton tutorial, baca materi, copy-paste… tapi tetap tidak
+                  bisa praktik dan tidak bisa bikin project nyata
+                </p>
+                <div class="flex gap-4 justify-center flex-wrap">
+                  <div class="text-sm text-slate-400">
+                    ❌ Tidak ada praktik nyata
+                  </div>
+                  <div class="text-sm text-slate-400">
+                    ❌ Bergantung AI tanpa paham
+                  </div>
+                  <div class="text-sm text-slate-400">❌ Tidak ada mentor</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: Solution -->
+            <div class="slider-item">
+              <div class="text-center py-12 md:py-16">
+                <div class="mb-6">
+                  <span
+                    class="inline-block px-4 py-2 rounded-full bg-green-500 bg-opacity-20 text-green-300 text-sm font-semibold mb-6"
+                  >
+                    ✅ SOLUSI
+                  </span>
+                </div>
+                <h2
+                  class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                >
+                  Belajar Lewat <br />
+                  <span class="glow-text">Real Project & Problem Solving</span>
+                </h2>
+                <p
+                  class="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto"
+                >
+                  Praktik langsung, diskusi dengan mentor, dan selesaikan
+                  masalah nyata bersama komunitas
+                </p>
+                <div class="flex gap-4 justify-center flex-wrap">
+                  <div class="text-sm text-slate-300">
+                    ✅ Praktik real project
+                  </div>
+                  <div class="text-sm text-slate-300">
+                    ✅ Bimbingan langsung
+                  </div>
+                  <div class="text-sm text-slate-300">✅ Diskusi aktif</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: CTA -->
+            <div class="slider-item">
+              <div class="text-center py-12 md:py-16">
+                <div class="mb-6">
+                  <span
+                    class="inline-block px-4 py-2 rounded-full bg-yellow-500 bg-opacity-20 text-yellow-300 text-sm font-semibold mb-6"
+                  >
+                    ⚡ PROMO LAUNCHING
+                  </span>
+                </div>
+                <h2
+                  class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
+                >
+                  <span class="glow-text">Bayar Seikhlasnya</span> <br />
+                  Hanya untuk 5 Orang
+                </h2>
+                <p
+                  class="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto"
+                >
+                  Slot sangat terbatas karena diskusi harus tetap optimal dan
+                  pembimbing fokus pada hasil maksimal
+                </p>
+                <div class="text-sm text-yellow-300 font-semibold">
+                  ⏳ Kesempatan emas yang tidak akan terulang lagi
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Navigation -->
+          <div class="flex justify-center gap-3 pb-6 px-4">
+            <button class="dot active" onclick="goToSlide(0)"></button>
+            <button class="dot" onclick="goToSlide(1)"></button>
+            <button class="dot" onclick="goToSlide(2)"></button>
+          </div>
+        </div>
+
+        <!-- Auto-advance message -->
+        <div class="text-center mt-8 text-slate-400 text-sm">
+          Geser slide untuk melihat cerita lengkapnya ↔️
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTEREST - Mengapa Orang Gagal -->
+    <section class="py-20 bg-slate-900">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            Kenapa Banyak Orang Gagal Belajar Coding?
+          </h2>
+          <p class="text-lg text-slate-300">
+            Ini bukan masalah dari dirimu, tapi dari cara belajar yang salah
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 mb-12">
+          <!-- Problem 1 -->
+          <div class="card-problem p-8 rounded-xl">
+            <div class="text-4xl mb-4">🎬</div>
+            <h3 class="text-xl font-bold mb-3">Belajar Tanpa Praktik Nyata</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Hanya nonton tutorial, baca materi, copy-paste tanpa paham. Tidak
+              pernah menghadapi problem real, tidak tahu cara debugging, dan
+              tidak terbiasa menyelesaikan error
+            </p>
+          </div>
+
+          <!-- Problem 2 -->
+          <div class="card-problem p-8 rounded-xl">
+            <div class="text-4xl mb-4">🤖</div>
+            <h3 class="text-xl font-bold mb-3">Bergantung AI Tanpa Paham</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Pakai ChatGPT untuk generate code, tapi tidak ngerti cara
+              kerjanya. Saat error malah stuck, saat butuh modifikasi bingung,
+              saat deploy sering gagal
+            </p>
+          </div>
+
+          <!-- Problem 3 -->
+          <div class="card-problem p-8 rounded-xl">
+            <div class="text-4xl mb-4">📚</div>
+            <h3 class="text-xl font-bold mb-3">Tidak Ada Real Project</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Belajar HTML, CSS, JS tapi belum pernah bikin landing page utuh.
+              Akibatnya: tidak punya portfolio, tidak siap ke dunia real, tidak
+              percaya diri ambil project
+            </p>
+          </div>
+
+          <!-- Problem 4 -->
+          <div class="card-problem p-8 rounded-xl">
+            <div class="text-4xl mb-4">😕</div>
+            <h3 class="text-xl font-bold mb-3">Tidak Ada Mentor Saat Stuck</h3>
+            <p class="text-slate-300 text-sm leading-relaxed">
+              Belajar sendiri cepat awalnya, tapi saat ketemu error aneh bisa
+              stuck berhari-hari. Tanpa feedback & koreksi cepat, percepatan
+              belajar jadi lambat
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="bg-gradient-to-r from-red-500 to-orange-500 rounded-xl p-8 text-center"
+        >
+          <p class="text-lg font-semibold">
+            3-6 bulan ke depan… kamu masih di titik yang sama jika tidak
+            mengubah cara belajar
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: DESIRE - Apa yang Kamu Dapatkan -->
+    <section class="py-20 bg-slate-950">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            <span class="glow-text">Solusi:</span> Belajar Dengan Cara Yang
+            Benar
+          </h2>
+          <p class="text-lg text-slate-300">
+            Apa yang kamu dapatkan di komunitas ini?
+          </p>
+        </div>
+
+        <!-- Benefits Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <div
+            class="bg-slate-900 p-8 rounded-xl border border-blue-500 border-opacity-30"
+          >
+            <div class="text-5xl mb-4">💻</div>
+            <h3 class="text-xl font-bold mb-2">Basic Coding</h3>
+            <ul class="text-sm text-slate-300 space-y-2">
+              <li>✓ Struktur HTML, CSS, JS</li>
+              <li>✓ Cara kerja website</li>
+              <li>✓ Alur pembuatan project</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-slate-900 p-8 rounded-xl border border-blue-500 border-opacity-30"
+          >
+            <div class="text-5xl mb-4">🌐</div>
+            <h3 class="text-xl font-bold mb-2">Website & Landing Page</h3>
+            <ul class="text-sm text-slate-300 space-y-2">
+              <li>✓ Struktur landing page</li>
+              <li>✓ Layout yang bisa dijual</li>
+              <li>✓ Implementasi langsung</li>
+            </ul>
+          </div>
+
+          <div
+            class="bg-slate-900 p-8 rounded-xl border border-blue-500 border-opacity-30"
+          >
+            <div class="text-5xl mb-4">📈</div>
+            <h3 class="text-xl font-bold mb-2">Digital Marketing</h3>
+            <ul class="text-sm text-slate-300 space-y-2">
+              <li>✓ Cara website dapat traffic</li>
+              <li>✓ Dasar funnel sederhana</li>
+              <li>✓ Insight kebutuhan market</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Key Features -->
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+          <div class="space-y-4">
+            <h3 class="text-2xl font-bold mb-6">
+              Kenapa Model Ini Lebih Efektif?
+            </h3>
+            <div class="space-y-4">
+              <div class="flex gap-4">
+                <span class="text-2xl">🧠</span>
+                <div>
+                  <h4 class="font-bold mb-1">Belajar dari Masalah Nyata</h4>
+                  <p class="text-slate-300 text-sm">
+                    Otak manusia lebih cepat belajar dari masalah nyata
+                    dibanding teori
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="text-2xl">🎯</span>
+                <div>
+                  <h4 class="font-bold mb-1">Tidak Mudah Lupa</h4>
+                  <p class="text-slate-300 text-sm">
+                    Praktik langsung membuat skill tertanam lebih dalam
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="text-2xl">⚡</span>
+                <div>
+                  <h4 class="font-bold mb-1">Lebih Cepat Paham</h4>
+                  <p class="text-slate-300 text-sm">
+                    Dengan mentor & komunitas, breakthrough terjadi lebih cepat
+                  </p>
+                </div>
+              </div>
+              <div class="flex gap-4">
+                <span class="text-2xl">🚀</span>
+                <div>
+                  <h4 class="font-bold mb-1">Siap ke Dunia Real</h4>
+                  <p class="text-slate-300 text-sm">
+                    Portfolio real project membuat kamu siap kerja profesional
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <h3 class="text-2xl font-bold mb-6">Yang Akan Kamu Lakukan</h3>
+            <div class="counter-box p-6 rounded-lg mb-4">
+              <div class="text-lg font-bold mb-2">
+                1. Belajar dari Masalah Nyata
+              </div>
+              <p class="text-sm text-slate-300">
+                Error saat ngoding, kendala bikin website, problem saat deploy —
+                di sinilah skill terbentuk
+              </p>
+            </div>
+            <div class="counter-box p-6 rounded-lg mb-4">
+              <div class="text-lg font-bold mb-2">
+                2. Ngoding Sambil Jalan (Real Project)
+              </div>
+              <p class="text-sm text-slate-300">
+                Diskusi project yang sedang dibuat, bikin landing page, struktur
+                dari nol dengan support mentor
+              </p>
+            </div>
+            <div class="counter-box p-6 rounded-lg mb-4">
+              <div class="text-lg font-bold mb-2">3. Diskusi Aktif</div>
+              <p class="text-sm text-slate-300">
+                Tanya jawab langsung, bahas kendala, dan sharing solusi bersama
+                praktisi berpengalaman
+              </p>
+            </div>
+            <div class="counter-box p-6 rounded-lg">
+              <div class="text-lg font-bold mb-2">4. Fokus Sampai Bisa</div>
+              <p class="text-sm text-slate-300">
+                Tujuan bukan sekadar paham, tapi bisa bikin sesuatu yang
+                bernilai dan bisa dijual
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: SOCIAL PROOF - Cocok Untuk Siapa -->
+    <section class="py-20 bg-slate-900">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            Cocok Untuk Siapa?
+          </h2>
+          <p class="text-lg text-slate-300">Apakah ini untuk kamu?</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-12">
+          <div
+            class="bg-gradient-to-br from-blue-900 to-slate-900 p-8 rounded-xl border-l-4 border-blue-500"
+          >
+            <div class="text-4xl mb-4">👶</div>
+            <h3 class="text-xl font-bold mb-4">Pemula Total (Dari Nol)</h3>
+            <ul class="text-sm text-slate-300 space-y-2 mb-6">
+              <li>✓ Belum pernah coding</li>
+              <li>✓ Belum pernah bikin website</li>
+              <li>✓ Bingung mulai dari mana</li>
+            </ul>
+            <p class="text-sm text-blue-300 font-semibold">
+              → Kamu mulai dari basic banget
+            </p>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-purple-900 to-slate-900 p-8 rounded-xl border-l-4 border-purple-500"
+          >
+            <div class="text-4xl mb-4">🤔</div>
+            <h3 class="text-xl font-bold mb-4">Pernah Belajar Tapi Bingung</h3>
+            <ul class="text-sm text-slate-300 space-y-2 mb-6">
+              <li>✓ Sudah nonton tutorial</li>
+              <li>✓ Sudah ikut kelas</li>
+              <li>✓ Tapi belum bisa praktik</li>
+            </ul>
+            <p class="text-sm text-purple-300 font-semibold">
+              → Kamu "connect the dots"
+            </p>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-green-900 to-slate-900 p-8 rounded-xl border-l-4 border-green-500"
+          >
+            <div class="text-4xl mb-4">🎯</div>
+            <h3 class="text-xl font-bold mb-4">Mau Bikin Project Nyata</h3>
+            <ul class="text-sm text-slate-300 space-y-2 mb-6">
+              <li>✓ Landing page</li>
+              <li>✓ Website sederhana</li>
+              <li>✓ Struktur project</li>
+            </ul>
+            <p class="text-sm text-green-300 font-semibold">
+              → Bukan teori, hasil nyata
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: PROMO & URGENCY -->
+    <section class="py-20 bg-slate-950 relative overflow-hidden">
+      <div class="absolute inset-0 opacity-10">
+        <div
+          class="absolute -top-40 -right-40 w-80 h-80 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl"
+        ></div>
+      </div>
+
+      <div class="container mx-auto px-4 max-w-4xl relative z-10">
+        <div class="text-center mb-16">
+          <div class="inline-block promo-badge px-6 py-3 rounded-full mb-6">
+            <span class="font-bold">⚡ PROMO LAUNCHING BATCH AWAL</span>
+          </div>
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Harga Spesial untuk Batch Awal
+          </h2>
+        </div>
+
+        <div
+          class="bg-gradient-to-br from-slate-800 to-slate-900 p-12 rounded-2xl border-2 border-yellow-500 border-opacity-50 mb-8"
+        >
+          <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p class="text-slate-300 text-lg mb-4">
+                Normalnya program seperti ini bernilai:
+              </p>
+              <div class="text-4xl font-bold text-slate-400 line-through mb-6">
+                Rp 2.500.000
+              </div>
+              <p class="text-slate-300 text-lg mb-4">
+                Tapi untuk batch awal bisa akses dengan:
+              </p>
+              <div class="text-5xl font-bold glow-text mb-4">
+                Bayar Seikhlasnya
+              </div>
+              <div
+                class="bg-yellow-500 bg-opacity-20 border-l-4 border-yellow-500 p-4 rounded"
+              >
+                <p class="text-yellow-300 font-bold">
+                  ⚠️ Hanya untuk 5 Orang Pertama
+                </p>
+                <p class="text-sm text-yellow-200 mt-2">
+                  Dibatasi supaya diskusi tetap optimal dan pembimbing fokus
+                </p>
+              </div>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold mb-6">Kenapa Dibatasi?</h3>
+              <div class="space-y-4">
+                <div class="flex gap-4 items-start">
+                  <span class="text-3xl">🎯</span>
+                  <div>
+                    <h4 class="font-bold">Diskusi Tetap Optimal</h4>
+                    <p class="text-sm text-slate-300">
+                      Jumlah terbatas = kualitas diskusi lebih tinggi
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                  <span class="text-3xl">👨‍🏫</span>
+                  <div>
+                    <h4 class="font-bold">Pembimbing Fokus</h4>
+                    <p class="text-sm text-slate-300">
+                      Mentor bisa memberikan attention penuh ke setiap member
+                    </p>
+                  </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                  <span class="text-3xl">🚀</span>
+                  <div>
+                    <h4 class="font-bold">Hasil Lebih Maksimal</h4>
+                    <p class="text-sm text-slate-300">
+                      Komunitas kecil = progress lebih cepat dan terukur
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Urgency Section -->
+        <div
+          class="bg-red-500 bg-opacity-10 border-l-4 border-red-500 p-8 rounded-lg mb-12 text-center"
+        >
+          <p class="text-2xl font-bold text-red-300 mb-4">
+            ⏳ Slot Sangat Terbatas
+          </p>
+          <p class="text-lg text-red-200 mb-4">
+            Jika kamu lewatkan ini, 3-6 bulan ke depan kamu masih di titik yang
+            sama
+          </p>
+          <p class="text-red-100">
+            Kemungkinan besar kamu akan: tetap bingung saat coding → tetap stuck
+            saat error → tetap nonton tanpa praktik
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: ACTION - CTA Buttons -->
+    <section class="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="text-center mb-12">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Ambil Kesempatanmu Sekarang
+          </h2>
+          <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+            Kalau kamu ingin bisa dan paham alur codingnya, bisa bikin website
+            dari 0, belajar dengan benar, dan siap jual sebagai jasa — ini
+            tempat yang tepat
+          </p>
+        </div>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+          <a
+            href="https://lynk.id/vetabiz/n8dxy1p9prwz"
+            target="_blank"
+            class="btn-primary px-8 py-4 rounded-lg font-bold text-lg text-center"
+          >
+            🚀 Join Sekarang
+          </a>
+          <a
+            href="https://carisolusi.biz.id/"
+            target="_blank"
+            class="btn-secondary px-8 py-4 rounded-lg font-bold text-lg text-center"
+          >
+            ← Kembali ke Web Carisolusi
+          </a>
+        </div>
+
+        <!-- FAQ Section -->
+        <div
+          class="bg-slate-900 p-8 rounded-xl border border-blue-500 border-opacity-20"
+        >
+          <h3 class="text-2xl font-bold mb-8 text-center">
+            Pertanyaan yang Sering Diajukan
+          </h3>
+          <div class="space-y-6">
+            <div>
+              <h4 class="font-bold text-lg mb-2">
+                ❓ Apakah cocok untuk pemula?
+              </h4>
+              <p class="text-slate-300">
+                Ya, sangat cocok. Semua dimulai dari nol dengan panduan lengkap
+                dari awal.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-2">
+                ❓ Apakah harus bisa coding dulu?
+              </h4>
+              <p class="text-slate-300">
+                Tidak. Justru ini tempat belajar dari awal dengan praktisi
+                berpengalaman.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-2">
+                ❓ Apakah ini kelas atau komunitas?
+              </h4>
+              <p class="text-slate-300">
+                Ini komunitas belajar aktif berbasis praktik & diskusi. Bukan
+                kelas teori biasa.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-2">❓ Apakah ada materi?</h4>
+              <p class="text-slate-300">
+                Ada, tapi fokus utama adalah praktik & problem solving, bukan
+                teori murni.
+              </p>
+            </div>
+            <div>
+              <h4 class="font-bold text-lg mb-2">
+                ❓ Apakah bisa langsung jago?
+              </h4>
+              <p class="text-slate-300">
+                Tidak instan, tapi jauh lebih cepat dibanding belajar sendiri
+                tanpa arah dan mentor.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: FINAL CTA -->
+    <section
+      class="py-16 bg-slate-950 border-t border-blue-500 border-opacity-20"
+    >
+      <div class="container mx-auto px-4 max-w-3xl text-center">
+        <h2 class="text-3xl font-bold mb-6">
+          Selamat Bergabung & Happy Ngoding!
+        </h2>
+        <p class="text-lg text-slate-300 mb-8">
+          Jika ada kendala saat belajar, langsung tanyakan di grup. Jangan
+          dipendam sendiri — karena di sinilah kamu belajar dari praktik nyata,
+          bukan dari teori doang.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="https://lynk.id/vetabiz/n8dxy1p9prwz"
+            target="_blank"
+            class="btn-primary px-6 py-3 rounded-lg font-bold"
+          >
+            ✨ Join Sekarang (Promo Terbatas)
+          </a>
+          <a
+            href="https://carisolusi.biz.id/"
+            target="_blank"
+            class="btn-secondary px-6 py-3 rounded-lg font-bold"
+          >
+            Kembali ke Web Carisolusi
+          </a>
+        </div>
+
+        <p class="text-sm text-slate-400 mt-8">
+          Created with ❤️ | Siap transform skill codingmu? Mulai sekarang! 🚀
+        </p>
+      </div>
+    </section>
+
+    <!-- JavaScript for Slider -->
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll('.slider-item');
+      const dots = document.querySelectorAll('.dot');
+
+      function goToSlide(n) {
+        currentSlide = n;
+        updateSlider();
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        updateSlider();
+      }
+
+      function updateSlider() {
+        const slider = document.getElementById('heroSlider');
+        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+        dots.forEach((dot, index) => {
+          if (index === currentSlide) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      // Auto-advance slider every 8 seconds
+      setInterval(nextSlide, 8000);
+
+      // Keyboard navigation
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft')
+          goToSlide((currentSlide - 1 + slides.length) % slides.length);
+        if (e.key === 'ArrowRight') nextSlide();
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
