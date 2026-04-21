@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Belajar Coding dari Nol - Grup Diskusi Premium</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 
@@ -151,7 +155,7 @@
                   <span
                     class="inline-block px-4 py-2 rounded-full bg-red-500 bg-opacity-20 text-red-300 text-sm font-semibold mb-6"
                   >
-                    🔴 MASALAH
+                    <i class="fas fa-circle text-red-400"></i> MASALAH
                   </span>
                 </div>
                 <h1
@@ -168,12 +172,17 @@
                 </p>
                 <div class="flex gap-4 justify-center flex-wrap">
                   <div class="text-sm text-slate-400">
-                    ❌ Tidak ada praktik nyata
+                    <i class="fas fa-times text-red-400 mr-2"></i>Tidak ada
+                    praktik nyata
                   </div>
                   <div class="text-sm text-slate-400">
-                    ❌ Bergantung AI tanpa paham
+                    <i class="fas fa-times text-red-400 mr-2"></i>Bergantung AI
+                    tanpa paham
                   </div>
-                  <div class="text-sm text-slate-400">❌ Tidak ada mentor</div>
+                  <div class="text-sm text-slate-400">
+                    <i class="fas fa-times text-red-400 mr-2"></i>Tidak ada
+                    mentor
+                  </div>
                 </div>
               </div>
             </div>
@@ -185,7 +194,7 @@
                   <span
                     class="inline-block px-4 py-2 rounded-full bg-green-500 bg-opacity-20 text-green-300 text-sm font-semibold mb-6"
                   >
-                    ✅ SOLUSI
+                    <i class="fas fa-check text-green-400"></i> SOLUSI
                   </span>
                 </div>
                 <h2
@@ -202,12 +211,17 @@
                 </p>
                 <div class="flex gap-4 justify-center flex-wrap">
                   <div class="text-sm text-slate-300">
-                    ✅ Praktik real project
+                    <i class="fas fa-check text-green-400 mr-2"></i>Praktik real
+                    project
                   </div>
                   <div class="text-sm text-slate-300">
-                    ✅ Bimbingan langsung
+                    <i class="fas fa-check text-green-400 mr-2"></i>Bimbingan
+                    langsung
                   </div>
-                  <div class="text-sm text-slate-300">✅ Diskusi aktif</div>
+                  <div class="text-sm text-slate-300">
+                    <i class="fas fa-check text-green-400 mr-2"></i>Diskusi
+                    aktif
+                  </div>
                 </div>
               </div>
             </div>
@@ -219,7 +233,7 @@
                   <span
                     class="inline-block px-4 py-2 rounded-full bg-yellow-500 bg-opacity-20 text-yellow-300 text-sm font-semibold mb-6"
                   >
-                    ⚡ PROMO LAUNCHING
+                    <i class="fas fa-bolt text-yellow-400"></i> PROMO LAUNCHING
                   </span>
                 </div>
                 <h2
@@ -235,7 +249,8 @@
                   pembimbing fokus pada hasil maksimal
                 </p>
                 <div class="text-sm text-yellow-300 font-semibold">
-                  ⏳ Kesempatan emas yang tidak akan terulang lagi
+                  <i class="fas fa-hourglass-end text-yellow-400 mr-2"></i
+                  >Kesempatan emas yang tidak akan terulang lagi
                 </div>
               </div>
             </div>
@@ -271,7 +286,9 @@
         <div class="grid md:grid-cols-2 gap-6 mb-12">
           <!-- Problem 1 -->
           <div class="card-problem p-8 rounded-xl">
-            <div class="text-4xl mb-4">🎬</div>
+            <div class="text-4xl mb-4">
+              <i class="fas fa-play text-blue-400"></i>
+            </div>
             <h3 class="text-xl font-bold mb-3">Belajar Tanpa Praktik Nyata</h3>
             <p class="text-slate-300 text-sm leading-relaxed">
               Hanya nonton tutorial, baca materi, copy-paste tanpa paham. Tidak
@@ -282,7 +299,9 @@
 
           <!-- Problem 2 -->
           <div class="card-problem p-8 rounded-xl">
-            <div class="text-4xl mb-4">🤖</div>
+            <div class="text-4xl mb-4">
+              <i class="fas fa-robot text-purple-400"></i>
+            </div>
             <h3 class="text-xl font-bold mb-3">Bergantung AI Tanpa Paham</h3>
             <p class="text-slate-300 text-sm leading-relaxed">
               Pakai ChatGPT untuk generate code, tapi tidak ngerti cara
@@ -293,7 +312,9 @@
 
           <!-- Problem 3 -->
           <div class="card-problem p-8 rounded-xl">
-            <div class="text-4xl mb-4">📚</div>
+            <div class="text-4xl mb-4">
+              <i class="fas fa-book text-green-400"></i>
+            </div>
             <h3 class="text-xl font-bold mb-3">Tidak Ada Real Project</h3>
             <p class="text-slate-300 text-sm leading-relaxed">
               Belajar HTML, CSS, JS tapi belum pernah bikin landing page utuh.
@@ -304,7 +325,9 @@
 
           <!-- Problem 4 -->
           <div class="card-problem p-8 rounded-xl">
-            <div class="text-4xl mb-4">😕</div>
+            <div class="text-4xl mb-4">
+              <i class="fas fa-exclamation-circle text-orange-400"></i>
+            </div>
             <h3 class="text-xl font-bold mb-3">Tidak Ada Mentor Saat Stuck</h3>
             <p class="text-slate-300 text-sm leading-relaxed">
               Belajar sendiri cepat awalnya, tapi saat ketemu error aneh bisa
@@ -343,36 +366,69 @@
           <div
             class="bg-slate-900 p-8 rounded-xl border border-blue-500 border-opacity-30"
           >
-            <div class="text-5xl mb-4">💻</div>
+            <div class="text-5xl mb-4">
+              <i class="fas fa-laptop text-blue-400"></i>
+            </div>
             <h3 class="text-xl font-bold mb-2">Basic Coding</h3>
             <ul class="text-sm text-slate-300 space-y-2">
-              <li>✓ Struktur HTML, CSS, JS</li>
-              <li>✓ Cara kerja website</li>
-              <li>✓ Alur pembuatan project</li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Struktur HTML,
+                CSS, JS
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Cara kerja
+                website
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Alur pembuatan
+                project
+              </li>
             </ul>
           </div>
 
           <div
             class="bg-slate-900 p-8 rounded-xl border border-blue-500 border-opacity-30"
           >
-            <div class="text-5xl mb-4">🌐</div>
+            <div class="text-5xl mb-4">
+              <i class="fas fa-globe text-cyan-400"></i>
+            </div>
             <h3 class="text-xl font-bold mb-2">Website & Landing Page</h3>
             <ul class="text-sm text-slate-300 space-y-2">
-              <li>✓ Struktur landing page</li>
-              <li>✓ Layout yang bisa dijual</li>
-              <li>✓ Implementasi langsung</li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Struktur landing
+                page
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Layout yang bisa
+                dijual
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Implementasi
+                langsung
+              </li>
             </ul>
           </div>
 
           <div
             class="bg-slate-900 p-8 rounded-xl border border-blue-500 border-opacity-30"
           >
-            <div class="text-5xl mb-4">📈</div>
+            <div class="text-5xl mb-4">
+              <i class="fas fa-chart-line text-green-400"></i>
+            </div>
             <h3 class="text-xl font-bold mb-2">Digital Marketing</h3>
             <ul class="text-sm text-slate-300 space-y-2">
-              <li>✓ Cara website dapat traffic</li>
-              <li>✓ Dasar funnel sederhana</li>
-              <li>✓ Insight kebutuhan market</li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Cara website
+                dapat traffic
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Dasar funnel
+                sederhana
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Insight
+                kebutuhan market
+              </li>
             </ul>
           </div>
         </div>
@@ -385,7 +441,9 @@
             </h3>
             <div class="space-y-4">
               <div class="flex gap-4">
-                <span class="text-2xl">🧠</span>
+                <span class="text-2xl"
+                  ><i class="fas fa-brain text-pink-400"></i
+                ></span>
                 <div>
                   <h4 class="font-bold mb-1">Belajar dari Masalah Nyata</h4>
                   <p class="text-slate-300 text-sm">
@@ -395,7 +453,9 @@
                 </div>
               </div>
               <div class="flex gap-4">
-                <span class="text-2xl">🎯</span>
+                <span class="text-2xl"
+                  ><i class="fas fa-bullseye text-yellow-400"></i
+                ></span>
                 <div>
                   <h4 class="font-bold mb-1">Tidak Mudah Lupa</h4>
                   <p class="text-slate-300 text-sm">
@@ -404,7 +464,9 @@
                 </div>
               </div>
               <div class="flex gap-4">
-                <span class="text-2xl">⚡</span>
+                <span class="text-2xl"
+                  ><i class="fas fa-bolt text-yellow-300"></i
+                ></span>
                 <div>
                   <h4 class="font-bold mb-1">Lebih Cepat Paham</h4>
                   <p class="text-slate-300 text-sm">
@@ -413,7 +475,9 @@
                 </div>
               </div>
               <div class="flex gap-4">
-                <span class="text-2xl">🚀</span>
+                <span class="text-2xl"
+                  ><i class="fas fa-rocket text-red-400"></i
+                ></span>
                 <div>
                   <h4 class="font-bold mb-1">Siap ke Dunia Real</h4>
                   <p class="text-slate-300 text-sm">
@@ -477,45 +541,76 @@
           <div
             class="bg-gradient-to-br from-blue-900 to-slate-900 p-8 rounded-xl border-l-4 border-blue-500"
           >
-            <div class="text-4xl mb-4">👶</div>
+            <div class="text-4xl mb-4">
+              <i class="fas fa-graduation-cap text-blue-300"></i>
+            </div>
             <h3 class="text-xl font-bold mb-4">Pemula Total (Dari Nol)</h3>
             <ul class="text-sm text-slate-300 space-y-2 mb-6">
-              <li>✓ Belum pernah coding</li>
-              <li>✓ Belum pernah bikin website</li>
-              <li>✓ Bingung mulai dari mana</li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Belum pernah
+                coding
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Belum pernah
+                bikin website
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Bingung mulai
+                dari mana
+              </li>
             </ul>
             <p class="text-sm text-blue-300 font-semibold">
-              → Kamu mulai dari basic banget
+              <i class="fas fa-arrow-right mr-2"></i>Kamu mulai dari basic
+              banget
             </p>
           </div>
 
           <div
             class="bg-gradient-to-br from-purple-900 to-slate-900 p-8 rounded-xl border-l-4 border-purple-500"
           >
-            <div class="text-4xl mb-4">🤔</div>
+            <div class="text-4xl mb-4">
+              <i class="fas fa-lightbulb text-purple-300"></i>
+            </div>
             <h3 class="text-xl font-bold mb-4">Pernah Belajar Tapi Bingung</h3>
             <ul class="text-sm text-slate-300 space-y-2 mb-6">
-              <li>✓ Sudah nonton tutorial</li>
-              <li>✓ Sudah ikut kelas</li>
-              <li>✓ Tapi belum bisa praktik</li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Sudah nonton
+                tutorial
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Sudah ikut kelas
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Tapi belum bisa
+                praktik
+              </li>
             </ul>
             <p class="text-sm text-purple-300 font-semibold">
-              → Kamu "connect the dots"
+              <i class="fas fa-arrow-right mr-2"></i>Kamu "connect the dots"
             </p>
           </div>
 
           <div
             class="bg-gradient-to-br from-green-900 to-slate-900 p-8 rounded-xl border-l-4 border-green-500"
           >
-            <div class="text-4xl mb-4">🎯</div>
+            <div class="text-4xl mb-4">
+              <i class="fas fa-bullseye text-green-300"></i>
+            </div>
             <h3 class="text-xl font-bold mb-4">Mau Bikin Project Nyata</h3>
             <ul class="text-sm text-slate-300 space-y-2 mb-6">
-              <li>✓ Landing page</li>
-              <li>✓ Website sederhana</li>
-              <li>✓ Struktur project</li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Landing page
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Website
+                sederhana
+              </li>
+              <li>
+                <i class="fas fa-check text-green-400 mr-2"></i>Struktur project
+              </li>
             </ul>
             <p class="text-sm text-green-300 font-semibold">
-              → Bukan teori, hasil nyata
+              <i class="fas fa-arrow-right mr-2"></i>Bukan teori, hasil nyata
             </p>
           </div>
         </div>
@@ -533,7 +628,10 @@
       <div class="container mx-auto px-4 max-w-4xl relative z-10">
         <div class="text-center mb-16">
           <div class="inline-block promo-badge px-6 py-3 rounded-full mb-6">
-            <span class="font-bold">⚡ PROMO LAUNCHING BATCH AWAL</span>
+            <span class="font-bold"
+              ><i class="fas fa-bolt text-yellow-400 mr-2"></i>PROMO LAUNCHING
+              BATCH AWAL</span
+            >
           </div>
           <h2 class="text-4xl md:text-5xl font-bold mb-6">
             Harga Spesial untuk Batch Awal
@@ -561,7 +659,10 @@
                 class="bg-yellow-500 bg-opacity-20 border-l-4 border-yellow-500 p-4 rounded"
               >
                 <p class="text-yellow-300 font-bold">
-                  ⚠️ Hanya untuk 5 Orang Pertama
+                  <i
+                    class="fas fa-exclamation-triangle text-yellow-400 mr-2"
+                  ></i
+                  >Hanya untuk 5 Orang Pertama
                 </p>
                 <p class="text-sm text-yellow-200 mt-2">
                   Dibatasi supaya diskusi tetap optimal dan pembimbing fokus
@@ -572,7 +673,9 @@
               <h3 class="text-2xl font-bold mb-6">Kenapa Dibatasi?</h3>
               <div class="space-y-4">
                 <div class="flex gap-4 items-start">
-                  <span class="text-3xl">🎯</span>
+                  <span class="text-3xl"
+                    ><i class="fas fa-bullseye text-yellow-400"></i
+                  ></span>
                   <div>
                     <h4 class="font-bold">Diskusi Tetap Optimal</h4>
                     <p class="text-sm text-slate-300">
@@ -581,7 +684,9 @@
                   </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                  <span class="text-3xl">👨‍🏫</span>
+                  <span class="text-3xl"
+                    ><i class="fas fa-chalkboard-user text-blue-400"></i
+                  ></span>
                   <div>
                     <h4 class="font-bold">Pembimbing Fokus</h4>
                     <p class="text-sm text-slate-300">
@@ -590,7 +695,9 @@
                   </div>
                 </div>
                 <div class="flex gap-4 items-start">
-                  <span class="text-3xl">🚀</span>
+                  <span class="text-3xl"
+                    ><i class="fas fa-rocket text-red-400"></i
+                  ></span>
                   <div>
                     <h4 class="font-bold">Hasil Lebih Maksimal</h4>
                     <p class="text-sm text-slate-300">
@@ -608,7 +715,8 @@
           class="bg-red-500 bg-opacity-10 border-l-4 border-red-500 p-8 rounded-lg mb-12 text-center"
         >
           <p class="text-2xl font-bold text-red-300 mb-4">
-            ⏳ Slot Sangat Terbatas
+            <i class="fas fa-hourglass-end text-red-400 mr-2"></i>Slot Sangat
+            Terbatas
           </p>
           <p class="text-lg text-red-200 mb-4">
             Jika kamu lewatkan ini, 3-6 bulan ke depan kamu masih di titik yang
@@ -643,14 +751,21 @@
             target="_blank"
             class="btn-primary px-8 py-4 rounded-lg font-bold text-lg text-center"
           >
-            🚀 Join Sekarang
+            <i class="fas fa-rocket mr-2"></i>Join Sekarang
+          </a>
+          <a
+            href="https://diamantdigital.vercel.app/"
+            target="_blank"
+            class="btn-secondary px-8 py-4 rounded-lg font-bold text-lg text-center"
+          >
+            <i class="fas fa-images mr-2"></i>Lihat Portofolio
           </a>
           <a
             href="https://carisolusi.biz.id/"
             target="_blank"
             class="btn-secondary px-8 py-4 rounded-lg font-bold text-lg text-center"
           >
-            ← Kembali ke Web Carisolusi
+            <i class="fas fa-arrow-left mr-2"></i>Kembali ke Web Carisolusi
           </a>
         </div>
 
@@ -664,7 +779,8 @@
           <div class="space-y-6">
             <div>
               <h4 class="font-bold text-lg mb-2">
-                ❓ Apakah cocok untuk pemula?
+                <i class="fas fa-question-circle text-blue-400 mr-2"></i>Apakah
+                cocok untuk pemula?
               </h4>
               <p class="text-slate-300">
                 Ya, sangat cocok. Semua dimulai dari nol dengan panduan lengkap
@@ -673,7 +789,8 @@
             </div>
             <div>
               <h4 class="font-bold text-lg mb-2">
-                ❓ Apakah harus bisa coding dulu?
+                <i class="fas fa-question-circle text-blue-400 mr-2"></i>Apakah
+                harus bisa coding dulu?
               </h4>
               <p class="text-slate-300">
                 Tidak. Justru ini tempat belajar dari awal dengan praktisi
@@ -682,7 +799,8 @@
             </div>
             <div>
               <h4 class="font-bold text-lg mb-2">
-                ❓ Apakah ini kelas atau komunitas?
+                <i class="fas fa-question-circle text-blue-400 mr-2"></i>Apakah
+                ini kelas atau komunitas?
               </h4>
               <p class="text-slate-300">
                 Ini komunitas belajar aktif berbasis praktik & diskusi. Bukan
@@ -690,7 +808,10 @@
               </p>
             </div>
             <div>
-              <h4 class="font-bold text-lg mb-2">❓ Apakah ada materi?</h4>
+              <h4 class="font-bold text-lg mb-2">
+                <i class="fas fa-question-circle text-blue-400 mr-2"></i>Apakah
+                ada materi?
+              </h4>
               <p class="text-slate-300">
                 Ada, tapi fokus utama adalah praktik & problem solving, bukan
                 teori murni.
@@ -698,7 +819,8 @@
             </div>
             <div>
               <h4 class="font-bold text-lg mb-2">
-                ❓ Apakah bisa langsung jago?
+                <i class="fas fa-question-circle text-blue-400 mr-2"></i>Apakah
+                bisa langsung jago?
               </h4>
               <p class="text-slate-300">
                 Tidak instan, tapi jauh lebih cepat dibanding belajar sendiri
@@ -724,25 +846,34 @@
           bukan dari teori doang.
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="flex flex-col sm:flex-row gap-4 justify-center flex-wrap">
           <a
             href="https://lynk.id/vetabiz/n8dxy1p9prwz"
             target="_blank"
             class="btn-primary px-6 py-3 rounded-lg font-bold"
           >
-            ✨ Join Sekarang (Promo Terbatas)
+            <i class="fas fa-star mr-2"></i>Join Sekarang (Promo Terbatas)
+          </a>
+          <a
+            href="https://diamantdigital.vercel.app/"
+            target="_blank"
+            class="btn-secondary px-6 py-3 rounded-lg font-bold"
+          >
+            <i class="fas fa-portfolio mr-2"></i>Lihat Portofolio
           </a>
           <a
             href="https://carisolusi.biz.id/"
             target="_blank"
             class="btn-secondary px-6 py-3 rounded-lg font-bold"
           >
-            Kembali ke Web Carisolusi
+            <i class="fas fa-arrow-left mr-2"></i>Kembali ke Web Carisolusi
           </a>
         </div>
 
         <p class="text-sm text-slate-400 mt-8">
-          Created with ❤️ | Siap transform skill codingmu? Mulai sekarang! 🚀
+          Created with <i class="fas fa-heart text-red-500"></i> | Siap
+          transform skill codingmu? Mulai sekarang!
+          <i class="fas fa-rocket text-yellow-400"></i>
         </p>
       </div>
     </section>
