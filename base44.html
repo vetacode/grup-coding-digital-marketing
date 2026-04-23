@@ -14,6 +14,10 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <style>
       /* ===== RESET & BASE ===== */
       *,
@@ -87,6 +91,7 @@
         margin: 0 auto;
         padding: 0 24px;
       }
+
       .container-sm {
         max-width: 800px;
         margin: 0 auto;
@@ -192,14 +197,9 @@
         justify-content: center;
         flex-shrink: 0;
       }
-      .icon-box svg {
-        width: 20px;
-        height: 20px;
-        stroke: var(--primary);
-        fill: none;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
+      .icon-box i {
+        font-size: 20px;
+        color: var(--primary);
       }
       .icon-box-sm {
         width: 32px;
@@ -207,10 +207,9 @@
         border-radius: 8px;
         background: var(--red-dim);
       }
-      .icon-box-sm svg {
-        width: 16px;
-        height: 16px;
-        stroke: var(--red);
+      .icon-box-sm i {
+        font-size: 16px;
+        color: var(--red);
       }
 
       /* ===== BUTTONS ===== */
@@ -266,14 +265,9 @@
         padding: 7px 16px;
         font-size: 13px;
       }
-      .pill svg {
-        width: 16px;
-        height: 16px;
-        stroke: var(--accent);
-        fill: none;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
+      .pill i {
+        font-size: 16px;
+        color: var(--accent);
       }
 
       /* ===== DIVIDER ===== */
@@ -314,7 +308,7 @@
       .hero-content {
         position: relative;
         z-index: 1;
-        padding: 80px 0;
+        padding: 80px 24px;
       }
       .hero-content h1 {
         font-size: clamp(2rem, 5vw, 3.5rem);
@@ -646,18 +640,11 @@
         justify-content: space-between;
         align-items: center;
       }
-      .faq-q svg {
-        width: 18px;
-        height: 18px;
-        stroke: var(--muted);
-        fill: none;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
+      .faq-q i {
         transition: transform 0.3s;
         flex-shrink: 0;
       }
-      .faq-item.open .faq-q svg {
+      .faq-item.open .faq-q i {
         transform: rotate(180deg);
       }
       .faq-a {
@@ -803,7 +790,7 @@
           class="btn-primary nav-cta"
           style="padding: 8px 20px; font-size: 13px"
         >
-          🚀 Join Sekarang
+          Join Sekarang
         </a>
       </div>
     </nav>
@@ -819,20 +806,7 @@
       </div>
       <div class="container hero-content">
         <div class="badge badge-primary fade-up delay-1">
-          <svg
-            viewBox="0 0 24 24"
-            style="
-              width: 14px;
-              height: 14px;
-              stroke: currentColor;
-              fill: none;
-              stroke-width: 2;
-              stroke-linecap: round;
-              stroke-linejoin: round;
-            "
-          >
-            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-          </svg>
+          <i class="fas fa-bolt" style="font-size: 14px"></i>
           Promo Launching — Batch Awal
         </div>
         <h1 class="fade-up delay-2">
@@ -845,10 +819,7 @@
         </p>
         <div class="fade-up delay-4">
           <div class="pill" style="display: inline-flex">
-            <svg viewBox="0 0 24 24">
-              <polyline points="16 18 22 12 16 6" />
-              <polyline points="8 6 2 12 8 18" />
-            </svg>
+            <i class="fas fa-code" style="color: var(--accent)"></i>
             HTML &bull; CSS &bull; JS &bull; Landing Page
           </div>
         </div>
@@ -863,22 +834,15 @@
               display: inline-flex;
             "
           >
-            🚀 Ambil Promo Sekarang
-            <svg
-              viewBox="0 0 24 24"
-              style="
-                width: 16px;
-                height: 16px;
-                stroke: currentColor;
-                fill: none;
-                stroke-width: 2;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-              "
-            >
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
+            <i
+              class="fas fa-rocket"
+              style="font-size: 16px; margin-right: 4px"
+            ></i
+            >Ambil Promo Sekarang
+            <i
+              class="fas fa-arrow-right"
+              style="font-size: 16px; margin-left: 4px"
+            ></i>
           </a>
           <a
             href="https://carisolusi.biz.id/"
@@ -886,7 +850,11 @@
             class="btn-outline"
             style="display: inline-flex"
           >
-            🌐 Web Carisolusi
+            <i
+              class="fas fa-globe"
+              style="font-size: 16px; margin-right: 4px"
+            ></i
+            >Web Carisolusi
           </a>
         </div>
       </div>
@@ -914,10 +882,10 @@
                 margin-top: 2px;
               "
             >
-              <svg viewBox="0 0 24 24">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
+              <i
+                class="fas fa-x"
+                style="font-size: 16px; color: var(--red)"
+              ></i>
             </div>
             <div>
               <h3>Belajar Tanpa Praktik Nyata</h3>
@@ -938,10 +906,10 @@
                 margin-top: 2px;
               "
             >
-              <svg viewBox="0 0 24 24">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
+              <i
+                class="fas fa-x"
+                style="font-size: 16px; color: var(--red)"
+              ></i>
             </div>
             <div>
               <h3>Terlalu Bergantung ke AI</h3>
@@ -962,10 +930,10 @@
                 margin-top: 2px;
               "
             >
-              <svg viewBox="0 0 24 24">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
+              <i
+                class="fas fa-x"
+                style="font-size: 16px; color: var(--red)"
+              ></i>
             </div>
             <div>
               <h3>Tidak Pernah Masuk Real Project</h3>
@@ -986,10 +954,10 @@
                 margin-top: 2px;
               "
             >
-              <svg viewBox="0 0 24 24">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
+              <i
+                class="fas fa-x"
+                style="font-size: 16px; color: var(--red)"
+              ></i>
             </div>
             <div>
               <h3>Tidak Ada Tempat Bertanya</h3>
@@ -1027,58 +995,63 @@
           <h2>Pernah Ngalamin Ini?</h2>
         </div>
         <div class="reality-item reveal delay-1">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
-            />
-            <line x1="12" y1="9" x2="12" y2="13" />
-            <line x1="12" y1="17" x2="12.01" y2="17" />
-          </svg>
+          <i
+            class="fas fa-triangle-exclamation"
+            style="
+              font-size: 20px;
+              color: var(--amber);
+              flex-shrink: 0;
+              margin-top: 2px;
+            "
+          ></i>
           <p>
             Sudah pakai prompt AI… sudah detail… tapi hasilnya tampilan landing
             page masih biasa aja
           </p>
         </div>
         <div class="reality-item reveal delay-2">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
-            />
-            <line x1="12" y1="9" x2="12" y2="13" />
-            <line x1="12" y1="17" x2="12.01" y2="17" />
-          </svg>
+          <i
+            class="fas fa-triangle-exclamation"
+            style="
+              font-size: 20px;
+              color: var(--amber);
+              flex-shrink: 0;
+              margin-top: 2px;
+            "
+          ></i>
           <p>
             Layout berantakan & tidak enak dilihat — apalagi dijual ke client
           </p>
         </div>
         <div class="reality-item reveal delay-3">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
-            />
-            <line x1="12" y1="9" x2="12" y2="13" />
-            <line x1="12" y1="17" x2="12.01" y2="17" />
-          </svg>
+          <i
+            class="fas fa-triangle-exclamation"
+            style="
+              font-size: 20px;
+              color: var(--amber);
+              flex-shrink: 0;
+              margin-top: 2px;
+            "
+          ></i>
           <p>Tahu konsep, tapi tidak bisa eksekusi</p>
         </div>
         <div class="reality-item reveal delay-3">
-          <svg viewBox="0 0 24 24">
-            <path
-              d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
-            />
-            <line x1="12" y1="9" x2="12" y2="13" />
-            <line x1="12" y1="17" x2="12.01" y2="17" />
-          </svg>
+          <i
+            class="fas fa-triangle-exclamation"
+            style="
+              font-size: 20px;
+              color: var(--amber);
+              flex-shrink: 0;
+              margin-top: 2px;
+            "
+          ></i>
           <p>Punya ilmu, tapi tidak bisa dipakai</p>
         </div>
         <div class="truth-box reveal">
           <p class="label">Masalah utamanya bukan di kamu…</p>
           <p class="statement">
             Tapi di cara belajar yang salah
-            <svg viewBox="0 0 24 24">
-              <line x1="5" y1="12" x2="19" y2="12" />
-              <polyline points="12 5 19 12 12 19" />
-            </svg>
+            <i class="fas fa-arrow-right" style="font-size: 20px"></i>
           </p>
         </div>
       </div>
@@ -1101,11 +1074,10 @@
         <div class="grid-2">
           <div class="card method-card reveal delay-1">
             <div class="icon-box" style="flex-shrink: 0; margin-top: 2px">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
-                />
-              </svg>
+              <i
+                class="fas fa-wrench"
+                style="font-size: 20px; color: var(--primary)"
+              ></i>
             </div>
             <div>
               <h3>Belajar dari Masalah Nyata</h3>
@@ -1117,10 +1089,10 @@
           </div>
           <div class="card method-card reveal delay-2">
             <div class="icon-box" style="flex-shrink: 0; margin-top: 2px">
-              <svg viewBox="0 0 24 24">
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
+              <i
+                class="fas fa-arrows-alt-h"
+                style="font-size: 20px; color: var(--primary)"
+              ></i>
             </div>
             <div>
               <h3>Ngoding Sambil Jalan</h3>
@@ -1132,11 +1104,10 @@
           </div>
           <div class="card method-card reveal delay-1">
             <div class="icon-box" style="flex-shrink: 0; margin-top: 2px">
-              <svg viewBox="0 0 24 24">
-                <path
-                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-                />
-              </svg>
+              <i
+                class="fas fa-comments"
+                style="font-size: 20px; color: var(--primary)"
+              ></i>
             </div>
             <div>
               <h3>Diskusi Aktif</h3>
@@ -1148,11 +1119,10 @@
           </div>
           <div class="card method-card reveal delay-2">
             <div class="icon-box" style="flex-shrink: 0; margin-top: 2px">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="12" y1="8" x2="12" y2="12" />
-                <line x1="12" y1="16" x2="12.01" y2="16" />
-              </svg>
+              <i
+                class="fas fa-circle-info"
+                style="font-size: 20px; color: var(--primary)"
+              ></i>
             </div>
             <div>
               <h3>Fokus Sampai Bisa</h3>
@@ -1242,10 +1212,10 @@
         <div class="grid-3">
           <div class="card curr-card reveal delay-1">
             <div class="icon-box">
-              <svg viewBox="0 0 24 24">
-                <polyline points="16 18 22 12 16 6" />
-                <polyline points="8 6 2 12 8 18" />
-              </svg>
+              <i
+                class="fas fa-code"
+                style="font-size: 20px; color: var(--primary)"
+              ></i>
             </div>
             <h3>Basic Coding (Praktis)</h3>
             <ul>
@@ -1256,13 +1226,10 @@
           </div>
           <div class="card curr-card reveal delay-2">
             <div class="icon-box">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <path
-                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                />
-              </svg>
+              <i
+                class="fas fa-globe"
+                style="font-size: 20px; color: var(--primary)"
+              ></i>
             </div>
             <h3>Website & Landing Page</h3>
             <ul>
@@ -1273,10 +1240,10 @@
           </div>
           <div class="card curr-card reveal delay-3">
             <div class="icon-box">
-              <svg viewBox="0 0 24 24">
-                <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-                <polyline points="16 7 22 7 22 13" />
-              </svg>
+              <i
+                class="fas fa-chart-line"
+                style="font-size: 20px; color: var(--primary)"
+              ></i>
             </div>
             <h3>Basic Digital Marketing</h3>
             <ul>
@@ -1288,27 +1255,15 @@
         </div>
         <div class="benefit-pills reveal">
           <div class="pill">
-            <svg viewBox="0 0 24 24">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
+            <i class="fas fa-people-group" style="color: var(--accent)"></i>
             Grup diskusi aktif
           </div>
           <div class="pill">
-            <svg viewBox="0 0 24 24">
-              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
-              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
-            </svg>
+            <i class="fas fa-book" style="color: var(--accent)"></i>
             Bimbingan langsung dari programmer
           </div>
           <div class="pill">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5z" />
-              <path d="M2 17l10 5 10-5" />
-              <path d="M2 12l10 5 10-5" />
-            </svg>
+            <i class="fas fa-layer-group" style="color: var(--accent)"></i>
             Praktik langsung bikin project
           </div>
         </div>
@@ -1328,10 +1283,10 @@
             style="display: flex; flex-direction: column"
           >
             <div class="icon-box">
-              <svg viewBox="0 0 24 24">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                <circle cx="12" cy="7" r="4" />
-              </svg>
+              <i
+                class="fas fa-user"
+                style="font-size: 20px; color: var(--primary)"
+              ></i>
             </div>
             <h3
               style="
@@ -1356,10 +1311,10 @@
             style="display: flex; flex-direction: column"
           >
             <div class="icon-box">
-              <svg viewBox="0 0 24 24">
-                <polyline points="1 4 1 10 7 10" />
-                <path d="M3.51 15a9 9 0 1 0 .49-5.34" />
-              </svg>
+              <i
+                class="fas fa-rotate-left"
+                style="font-size: 20px; color: var(--primary)"
+              ></i>
             </div>
             <h3
               style="
@@ -1384,11 +1339,10 @@
             style="display: flex; flex-direction: column"
           >
             <div class="icon-box">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
-              </svg>
+              <i
+                class="fas fa-cube"
+                style="font-size: 20px; color: var(--primary)"
+              ></i>
             </div>
             <h3
               style="
@@ -1429,20 +1383,7 @@
       <div class="container-sm">
         <div class="section-title reveal">
           <div class="badge badge-primary">
-            <svg
-              viewBox="0 0 24 24"
-              style="
-                width: 13px;
-                height: 13px;
-                stroke: currentColor;
-                fill: none;
-                stroke-width: 2;
-                stroke-linecap: round;
-                stroke-linejoin: round;
-              "
-            >
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-            </svg>
+            <i class="fas fa-bolt" style="font-size: 13px"></i>
             PROMO LAUNCHING — BATCH AWAL
           </div>
           <h2>Ambil Kesempatanmu <span class="grad">Sekarang</span></h2>
@@ -1455,36 +1396,37 @@
             <p class="price-old">Rp 2.500.000</p>
             <p class="price-new">💥 Bayar Seikhlasnya</p>
             <div class="urgency-badge">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
+              <i class="fas fa-clock" style="font-size: 13px"></i>
               Hanya untuk 5 Orang Pertama
             </div>
           </div>
           <div class="checklist">
             <div class="checklist-item">
-              <svg viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+              <i
+                class="fas fa-check"
+                style="font-size: 16px; color: var(--accent)"
+              ></i>
               Bisa & paham alur coding (bukan copy AI)
             </div>
             <div class="checklist-item">
-              <svg viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+              <i
+                class="fas fa-check"
+                style="font-size: 16px; color: var(--accent)"
+              ></i>
               Bisa bikin website sendiri dari 0
             </div>
             <div class="checklist-item">
-              <svg viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+              <i
+                class="fas fa-check"
+                style="font-size: 16px; color: var(--accent)"
+              ></i>
               Belajar dengan cara yang benar
             </div>
             <div class="checklist-item">
-              <svg viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
+              <i
+                class="fas fa-check"
+                style="font-size: 16px; color: var(--accent)"
+              ></i>
               Siap jual sebagai jasa
             </div>
           </div>
@@ -1494,62 +1436,16 @@
               target="_blank"
               class="btn-primary"
             >
-              <svg
-                viewBox="0 0 24 24"
-                style="
-                  width: 16px;
-                  height: 16px;
-                  stroke: currentColor;
-                  fill: none;
-                  stroke-width: 2;
-                  stroke-linecap: round;
-                  stroke-linejoin: round;
-                "
-              >
-                <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                <path d="M2 17l10 5 10-5" />
-                <path d="M2 12l10 5 10-5" />
-              </svg>
+              <i class="fas fa-layer-group" style="font-size: 16px"></i>
               Join Sekarang
-              <svg
-                viewBox="0 0 24 24"
-                style="
-                  width: 16px;
-                  height: 16px;
-                  stroke: currentColor;
-                  fill: none;
-                  stroke-width: 2;
-                  stroke-linecap: round;
-                  stroke-linejoin: round;
-                "
-              >
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
+              <i class="fas fa-arrow-right" style="font-size: 16px"></i>
             </a>
             <a
               href="https://carisolusi.biz.id/"
               target="_blank"
               class="btn-outline"
             >
-              <svg
-                viewBox="0 0 24 24"
-                style="
-                  width: 16px;
-                  height: 16px;
-                  stroke: currentColor;
-                  fill: none;
-                  stroke-width: 2;
-                  stroke-linecap: round;
-                  stroke-linejoin: round;
-                "
-              >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <path
-                  d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-                />
-              </svg>
+              <i class="fas fa-globe" style="font-size: 16px"></i>
               Kembali ke Web Carisolusi
             </a>
           </div>
@@ -1568,9 +1464,10 @@
         </div>
         <div class="faq-item reveal">
           <div class="faq-q">
-            Apakah cocok untuk pemula?<svg viewBox="0 0 24 24">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+            Apakah cocok untuk pemula?<i
+              class="fas fa-chevron-down"
+              style="font-size: 18px; color: var(--muted)"
+            ></i>
           </div>
           <div class="faq-a">
             Ya, sangat cocok. Semua dimulai dari nol. Tidak ada syarat skill
@@ -1579,9 +1476,10 @@
         </div>
         <div class="faq-item reveal">
           <div class="faq-q">
-            Apakah harus bisa coding dulu?<svg viewBox="0 0 24 24">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+            Apakah harus bisa coding dulu?<i
+              class="fas fa-chevron-down"
+              style="font-size: 18px; color: var(--muted)"
+            ></i>
           </div>
           <div class="faq-a">
             Tidak. Justru ini tempat belajar dari awal. Tidak perlu background
@@ -1590,9 +1488,10 @@
         </div>
         <div class="faq-item reveal">
           <div class="faq-q">
-            Apakah ini kelas atau komunitas?<svg viewBox="0 0 24 24">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+            Apakah ini kelas atau komunitas?<i
+              class="fas fa-chevron-down"
+              style="font-size: 18px; color: var(--muted)"
+            ></i>
           </div>
           <div class="faq-a">
             Ini komunitas belajar aktif berbasis praktik & diskusi. Bukan kelas
@@ -1601,9 +1500,10 @@
         </div>
         <div class="faq-item reveal">
           <div class="faq-q">
-            Apakah ada materi?<svg viewBox="0 0 24 24">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+            Apakah ada materi?<i
+              class="fas fa-chevron-down"
+              style="font-size: 18px; color: var(--muted)"
+            ></i>
           </div>
           <div class="faq-a">
             Ada, tapi bukan fokus utama. Fokusnya praktik & problem solving
@@ -1612,9 +1512,10 @@
         </div>
         <div class="faq-item reveal">
           <div class="faq-q">
-            Apakah bisa langsung jago?<svg viewBox="0 0 24 24">
-              <polyline points="6 9 12 15 18 9" />
-            </svg>
+            Apakah bisa langsung jago?<i
+              class="fas fa-chevron-down"
+              style="font-size: 18px; color: var(--muted)"
+            ></i>
           </div>
           <div class="faq-a">
             Tidak instan, tapi jauh lebih cepat dibanding belajar sendiri tanpa
@@ -1631,7 +1532,7 @@
           class="reveal"
           style="font-size: clamp(1.4rem, 3.5vw, 2rem); margin-bottom: 8px"
         >
-          🚀 Selamat Bergabung & Happy Ngoding
+          Selamat Bergabung & Happy Ngoding
         </h2>
         <p class="muted reveal" style="margin-bottom: 32px">
           Kalau ada kendala saat belajar — langsung tanyakan di grup. Bukan dari
@@ -1643,14 +1544,22 @@
             target="_blank"
             class="btn-primary"
           >
-            🚀 Join Sekarang
+            <i
+              class="fas fa-rocket"
+              style="font-size: 16px; margin-right: 4px"
+            ></i
+            >Join Sekarang
           </a>
           <a
             href="https://carisolusi.biz.id/"
             target="_blank"
             class="btn-outline"
           >
-            🌐 Kembali ke Web Carisolusi
+            <i
+              class="fas fa-globe"
+              style="font-size: 16px; margin-right: 4px"
+            ></i
+            >Kembali ke Web Carisolusi
           </a>
         </div>
       </div>
@@ -1663,7 +1572,7 @@
           <strong>CariSolusi.biz.id</strong> — Belajar Coding & Digital
           Marketing
         </p>
-        <p>Belajar dari nol, tapi dengan cara yang benar. 🚀</p>
+        <p>Belajar dari nol, tapi dengan cara yang benar.</p>
       </div>
     </footer>
 
