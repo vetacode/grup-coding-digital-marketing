@@ -112,6 +112,56 @@
         backdrop-filter: blur(10px);
       }
 
+      .review-card {
+        background:
+          linear-gradient(
+            145deg,
+            rgba(30, 41, 59, 0.92),
+            rgba(15, 23, 42, 0.96)
+          ),
+          rgba(15, 23, 42, 0.9);
+        border: 1px solid rgba(148, 163, 184, 0.18);
+        box-shadow: 0 22px 60px rgba(2, 6, 23, 0.28);
+        transition:
+          transform 0.28s ease,
+          border-color 0.28s ease,
+          box-shadow 0.28s ease;
+      }
+
+      .review-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(59, 130, 246, 0.55);
+        box-shadow: 0 28px 80px rgba(37, 99, 235, 0.18);
+      }
+
+      .review-card img {
+        transition: transform 0.45s ease;
+      }
+
+      .review-card:hover img {
+        transform: scale(1.04);
+      }
+
+      .review-modal {
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+      }
+
+      .review-modal.is-open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .review-modal-panel {
+        transform: scale(0.96);
+        transition: transform 0.25s ease;
+      }
+
+      .review-modal.is-open .review-modal-panel {
+        transform: scale(1);
+      }
+
       .promo-badge {
         background: linear-gradient(135deg, #dc2626, #ef4444);
         animation: pulse 2s infinite;
@@ -617,7 +667,285 @@
       </div>
     </section>
 
-    <!-- SECTION 5: PROMO & URGENCY -->
+    <!-- SECTION 5: REVIEWS -->
+    <section class="py-20 bg-slate-950 relative overflow-hidden">
+      <div class="container mx-auto px-4 max-w-6xl relative z-10">
+        <div class="text-center mb-14">
+          <span
+            class="inline-flex items-center gap-2 rounded-full border border-blue-400 border-opacity-30 bg-blue-500 bg-opacity-10 px-4 py-2 text-sm font-semibold text-blue-200 mb-5"
+          >
+            <i class="fas fa-star text-yellow-400"></i> Reviews
+          </span>
+          <h2 class="text-4xl md:text-5xl font-bold mb-4">
+            Bukti Nyata dari Member
+          </h2>
+          <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+            Cuplikan diskusi dan feedback dari peserta yang sudah belajar bareng
+            di grup.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+          <button
+            type="button"
+            class="review-card group overflow-hidden rounded-xl p-3 text-left"
+            onclick="
+              openReviewModal(
+                'https://carisolusi.biz.id/gambarbebas/20260507-014451_WA%20group%20coding%20dari%20nol.jpeg',
+                'Review grup coding dari nol'
+              )
+            "
+          >
+            <div
+              class="relative overflow-hidden rounded-lg bg-slate-900 aspect-[9/16]"
+            >
+              <img
+                src="https://carisolusi.biz.id/gambarbebas/20260507-014451_WA%20group%20coding%20dari%20nol.jpeg"
+                alt="Review grup coding dari nol"
+                class="h-full w-full object-contain"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4 pt-12"
+              >
+                <span class="text-sm font-semibold text-white">Review 01</span>
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-full bg-white bg-opacity-15 text-white backdrop-blur"
+                >
+                  <i class="fas fa-expand"></i>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="review-card group overflow-hidden rounded-xl p-3 text-left"
+            onclick="
+              openReviewModal(
+                'https://carisolusi.biz.id/gambarbebas/20260507-014450_grup%20coding%20ruli2.png',
+                'Review grup coding Ruli 2'
+              )
+            "
+          >
+            <div
+              class="relative overflow-hidden rounded-lg bg-slate-900 aspect-[9/16]"
+            >
+              <img
+                src="https://carisolusi.biz.id/gambarbebas/20260507-014450_grup%20coding%20ruli2.png"
+                alt="Review grup coding Ruli 2"
+                class="h-full w-full object-contain"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4 pt-12"
+              >
+                <span class="text-sm font-semibold text-white">Review 02</span>
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-full bg-white bg-opacity-15 text-white backdrop-blur"
+                >
+                  <i class="fas fa-expand"></i>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="review-card group overflow-hidden rounded-xl p-3 text-left"
+            onclick="
+              openReviewModal(
+                'https://carisolusi.biz.id/gambarbebas/20260507-014450_grup%20coding%20ruli3.png',
+                'Review grup coding Ruli 3'
+              )
+            "
+          >
+            <div
+              class="relative overflow-hidden rounded-lg bg-slate-900 aspect-[9/16]"
+            >
+              <img
+                src="https://carisolusi.biz.id/gambarbebas/20260507-014450_grup%20coding%20ruli3.png"
+                alt="Review grup coding Ruli 3"
+                class="h-full w-full object-contain"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4 pt-12"
+              >
+                <span class="text-sm font-semibold text-white">Review 03</span>
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-full bg-white bg-opacity-15 text-white backdrop-blur"
+                >
+                  <i class="fas fa-expand"></i>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="review-card group overflow-hidden rounded-xl p-3 text-left"
+            onclick="
+              openReviewModal(
+                'https://carisolusi.biz.id/gambarbebas/20260507-014450_grup%20coding%20ruli4.png',
+                'Review grup coding Ruli 4'
+              )
+            "
+          >
+            <div
+              class="relative overflow-hidden rounded-lg bg-slate-900 aspect-[9/16]"
+            >
+              <img
+                src="https://carisolusi.biz.id/gambarbebas/20260507-014450_grup%20coding%20ruli4.png"
+                alt="Review grup coding Ruli 4"
+                class="h-full w-full object-contain"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4 pt-12"
+              >
+                <span class="text-sm font-semibold text-white">Review 04</span>
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-full bg-white bg-opacity-15 text-white backdrop-blur"
+                >
+                  <i class="fas fa-expand"></i>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="review-card group overflow-hidden rounded-xl p-3 text-left"
+            onclick="
+              openReviewModal(
+                'https://carisolusi.biz.id/gambarbebas/20260507-014450_grup%20coding%20siti2.png',
+                'Review grup coding Siti 2'
+              )
+            "
+          >
+            <div
+              class="relative overflow-hidden rounded-lg bg-slate-900 aspect-[9/16]"
+            >
+              <img
+                src="https://carisolusi.biz.id/gambarbebas/20260507-014450_grup%20coding%20siti2.png"
+                alt="Review grup coding Siti 2"
+                class="h-full w-full object-contain"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4 pt-12"
+              >
+                <span class="text-sm font-semibold text-white">Review 05</span>
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-full bg-white bg-opacity-15 text-white backdrop-blur"
+                >
+                  <i class="fas fa-expand"></i>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="review-card group overflow-hidden rounded-xl p-3 text-left"
+            onclick="
+              openReviewModal(
+                'https://carisolusi.biz.id/gambarbebas/20260507-014450_Ruli%20praise%20carisolusi.png',
+                'Review Ruli praise Carisolusi'
+              )
+            "
+          >
+            <div
+              class="relative overflow-hidden rounded-lg bg-slate-900 aspect-[9/16]"
+            >
+              <img
+                src="https://carisolusi.biz.id/gambarbebas/20260507-014450_Ruli%20praise%20carisolusi.png"
+                alt="Review Ruli praise Carisolusi"
+                class="h-full w-full object-contain"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4 pt-12"
+              >
+                <span class="text-sm font-semibold text-white">Review 06</span>
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-full bg-white bg-opacity-15 text-white backdrop-blur"
+                >
+                  <i class="fas fa-expand"></i>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="review-card group overflow-hidden rounded-xl p-3 text-left"
+            onclick="
+              openReviewModal(
+                'https://carisolusi.biz.id/gambarbebas/20260507-014450_Ruli%20terimakasih%20belajar%20hari%20ini.png',
+                'Review Ruli terimakasih belajar hari ini'
+              )
+            "
+          >
+            <div
+              class="relative overflow-hidden rounded-lg bg-slate-900 aspect-[9/16]"
+            >
+              <img
+                src="https://carisolusi.biz.id/gambarbebas/20260507-014450_Ruli%20terimakasih%20belajar%20hari%20ini.png"
+                alt="Review Ruli terimakasih belajar hari ini"
+                class="h-full w-full object-contain"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4 pt-12"
+              >
+                <span class="text-sm font-semibold text-white">Review 07</span>
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-full bg-white bg-opacity-15 text-white backdrop-blur"
+                >
+                  <i class="fas fa-expand"></i>
+                </span>
+              </div>
+            </div>
+          </button>
+
+          <button
+            type="button"
+            class="review-card group overflow-hidden rounded-xl p-3 text-left"
+            onclick="
+              openReviewModal(
+                'https://carisolusi.biz.id/gambarbebas/20260507-014449_grup%20coding%20ruli1.png',
+                'Review grup coding Ruli 1'
+              )
+            "
+          >
+            <div
+              class="relative overflow-hidden rounded-lg bg-slate-900 aspect-[9/16]"
+            >
+              <img
+                src="https://carisolusi.biz.id/gambarbebas/20260507-014449_grup%20coding%20ruli1.png"
+                alt="Review grup coding Ruli 1"
+                class="h-full w-full object-contain"
+                loading="lazy"
+              />
+              <div
+                class="absolute inset-x-0 bottom-0 flex items-center justify-between bg-gradient-to-t from-slate-950 via-slate-950/70 to-transparent p-4 pt-12"
+              >
+                <span class="text-sm font-semibold text-white">Review 08</span>
+                <span
+                  class="grid h-9 w-9 place-items-center rounded-full bg-white bg-opacity-15 text-white backdrop-blur"
+                >
+                  <i class="fas fa-expand"></i>
+                </span>
+              </div>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: PROMO & URGENCY -->
     <section class="py-20 bg-slate-950 relative overflow-hidden">
       <div class="absolute inset-0 opacity-10">
         <div
@@ -730,7 +1058,7 @@
       </div>
     </section>
 
-    <!-- SECTION 6: ACTION - CTA Buttons -->
+    <!-- SECTION 7: ACTION - CTA Buttons -->
     <section class="py-20 bg-gradient-to-b from-slate-950 to-slate-900">
       <div class="container mx-auto px-4 max-w-4xl">
         <div class="text-center mb-12">
@@ -832,7 +1160,7 @@
       </div>
     </section>
 
-    <!-- SECTION 7: FINAL CTA -->
+    <!-- SECTION 8: FINAL CTA -->
     <section
       class="py-16 bg-slate-950 border-t border-blue-500 border-opacity-20"
     >
@@ -878,11 +1206,38 @@
       </div>
     </section>
 
+    <!-- Review Zoom Modal -->
+    <div
+      id="reviewModal"
+      class="review-modal fixed inset-0 z-50 flex items-center justify-center bg-slate-950 bg-opacity-90 p-4 backdrop-blur-sm"
+      aria-hidden="true"
+      onclick="handleReviewBackdrop(event)"
+    >
+      <div class="review-modal-panel relative max-h-[92vh] w-full max-w-5xl">
+        <button
+          type="button"
+          class="absolute -top-12 right-0 grid h-10 w-10 place-items-center rounded-full bg-white bg-opacity-10 text-white transition hover:bg-opacity-20"
+          aria-label="Tutup review"
+          onclick="closeReviewModal()"
+        >
+          <i class="fas fa-times"></i>
+        </button>
+        <img
+          id="reviewModalImage"
+          src=""
+          alt=""
+          class="mx-auto max-h-[92vh] w-auto max-w-full rounded-xl border border-white border-opacity-10 bg-slate-900 object-contain shadow-2xl"
+        />
+      </div>
+    </div>
+
     <!-- JavaScript for Slider -->
     <script>
       let currentSlide = 0;
       const slides = document.querySelectorAll('.slider-item');
       const dots = document.querySelectorAll('.dot');
+      const reviewModal = document.getElementById('reviewModal');
+      const reviewModalImage = document.getElementById('reviewModalImage');
 
       function goToSlide(n) {
         currentSlide = n;
@@ -907,11 +1262,34 @@
         });
       }
 
+      function openReviewModal(imageSrc, imageAlt) {
+        reviewModalImage.src = imageSrc;
+        reviewModalImage.alt = imageAlt;
+        reviewModal.classList.add('is-open');
+        reviewModal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('overflow-hidden');
+      }
+
+      function closeReviewModal() {
+        reviewModal.classList.remove('is-open');
+        reviewModal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('overflow-hidden');
+      }
+
+      function handleReviewBackdrop(event) {
+        if (event.target === reviewModal) {
+          closeReviewModal();
+        }
+      }
+
       // Auto-advance slider every 8 seconds
       setInterval(nextSlide, 8000);
 
       // Keyboard navigation
       document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && reviewModal.classList.contains('is-open')) {
+          closeReviewModal();
+        }
         if (e.key === 'ArrowLeft')
           goToSlide((currentSlide - 1 + slides.length) % slides.length);
         if (e.key === 'ArrowRight') nextSlide();
